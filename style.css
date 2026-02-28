@@ -1723,6 +1723,20 @@ a {
   line-height: 1.8;
 }
 
+.footer__legal-link {
+  color: var(--grey-500);
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.25);
+  text-underline-offset: 2px;
+  transition: color var(--transition-fast), text-decoration-color var(--transition-fast);
+}
+
+.footer__legal-link:hover,
+.footer__legal-link:focus {
+  color: var(--white);
+  text-decoration-color: rgba(255, 255, 255, 0.6);
+}
+
 .footer__legal-sep {
   color: var(--grey-700);
   margin: 0 6px;
