@@ -1,0 +1,159 @@
+{
+  "generatedAt": "2026-02-28T13:21:17.992Z",
+  "config": {
+    "repeatWindowTurns": 8,
+    "escalateRepeatCount": 3,
+    "maxRangeSpan": 50,
+    "enforceMonotonicTurns": true,
+    "requirePayloadObject": false,
+    "allowCrossLedgerDuplicateKey": true
+  },
+  "findings": [],
+  "summary": {
+    "totalEvents": 5,
+    "factEntries": 3,
+    "commitmentEntries": 1,
+    "contextEntries": 1,
+    "uniqueSignatures": 3,
+    "repeatedRows": 1,
+    "escalatedRows": 1,
+    "resolvedRows": 0,
+    "blockingFindings": 0
+  },
+  "ledger": {
+    "fact": [
+      {
+        "eventId": "E-001",
+        "entryKey": "claim-availability",
+        "turn_index": 3,
+        "turn_range": [
+          2,
+          3
+        ],
+        "repeatCount": 1,
+        "status": "NEW",
+        "resolved": false,
+        "note": "Initial claim"
+      },
+      {
+        "eventId": "E-002",
+        "entryKey": "claim-availability",
+        "turn_index": 6,
+        "turn_range": [
+          6,
+          6
+        ],
+        "repeatCount": 2,
+        "status": "REPEATED",
+        "resolved": false,
+        "note": "Repeated claim"
+      },
+      {
+        "eventId": "E-005",
+        "entryKey": "claim-availability",
+        "turn_index": 13,
+        "turn_range": [
+          13,
+          13
+        ],
+        "repeatCount": 3,
+        "status": "ESCALATED",
+        "resolved": false,
+        "note": "Third repeat in window"
+      }
+    ],
+    "commitment": [
+      {
+        "eventId": "E-003",
+        "entryKey": "promise-follow-up",
+        "turn_index": 9,
+        "turn_range": [
+          8,
+          9
+        ],
+        "repeatCount": 1,
+        "status": "NEW",
+        "resolved": false,
+        "note": null
+      }
+    ],
+    "context": [
+      {
+        "eventId": "E-004",
+        "entryKey": "session-boundary",
+        "turn_index": 12,
+        "turn_range": [
+          11,
+          12
+        ],
+        "repeatCount": 1,
+        "status": "NEW",
+        "resolved": false,
+        "note": null
+      }
+    ]
+  },
+  "decisions": [
+    {
+      "signature": "fact:claim-availability",
+      "ledgerType": "fact",
+      "entryKey": "claim-availability",
+      "status": "NEW",
+      "repeatCount": 1,
+      "turn_index": 3
+    },
+    {
+      "signature": "fact:claim-availability",
+      "ledgerType": "fact",
+      "entryKey": "claim-availability",
+      "status": "REPEATED",
+      "repeatCount": 2,
+      "turn_index": 6
+    },
+    {
+      "signature": "commitment:promise-follow-up",
+      "ledgerType": "commitment",
+      "entryKey": "promise-follow-up",
+      "status": "NEW",
+      "repeatCount": 1,
+      "turn_index": 9
+    },
+    {
+      "signature": "context:session-boundary",
+      "ledgerType": "context",
+      "entryKey": "session-boundary",
+      "status": "NEW",
+      "repeatCount": 1,
+      "turn_index": 12
+    },
+    {
+      "signature": "fact:claim-availability",
+      "ledgerType": "fact",
+      "entryKey": "claim-availability",
+      "status": "ESCALATED",
+      "repeatCount": 3,
+      "turn_index": 13
+    }
+  ],
+  "trace": [
+    {
+      "step": "input",
+      "message": "Collected and normalized events.",
+      "data": {
+        "eventCount": 5
+      }
+    },
+    {
+      "step": "ledger",
+      "message": "Built ledger and repeat decisions.",
+      "data": {
+        "factEntries": 3,
+        "commitmentEntries": 1,
+        "contextEntries": 1,
+        "repeatedRows": 1,
+        "escalatedRows": 1,
+        "resolvedRows": 0
+      }
+    }
+  ]
+}

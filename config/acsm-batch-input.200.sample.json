@@ -1,0 +1,2804 @@
+{
+  "cases": [
+    {
+      "id": "case-001",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 1: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-002",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 2: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-003",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 3: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-004",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 4: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-005",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 5: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-006",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 6: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-007",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 7: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-008",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 8: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-009",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 9: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-010",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 10: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-011",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 11: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-012",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 12: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-013",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 13: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-014",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 14: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-015",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 15: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-016",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 16: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-017",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 17: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-018",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 18: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-019",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 19: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-020",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 20: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-021",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 21: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-022",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 22: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-023",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 23: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-024",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 24: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-025",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 25: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-026",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 26: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-027",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 27: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-028",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 28: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-029",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 29: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-030",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 30: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-031",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 31: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-032",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 32: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-033",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 33: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-034",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 34: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-035",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 35: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-036",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 36: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-037",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 37: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-038",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 38: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-039",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 39: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-040",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 40: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-041",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 41: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-042",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 42: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-043",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 43: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-044",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 44: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-045",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 45: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-046",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 46: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-047",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 47: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-048",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 48: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-049",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 49: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-050",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 50: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-051",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 51: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-052",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 52: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-053",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 53: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-054",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 54: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-055",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 55: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-056",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 56: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-057",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 57: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-058",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 58: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-059",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 59: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-060",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 60: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-061",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 61: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-062",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 62: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-063",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 63: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-064",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 64: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-065",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 65: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-066",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 66: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-067",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 67: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-068",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 68: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-069",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 69: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-070",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 70: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-071",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 71: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-072",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 72: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-073",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 73: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-074",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 74: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-075",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 75: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-076",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 76: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-077",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 77: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-078",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 78: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-079",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 79: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-080",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 80: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-081",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 81: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-082",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 82: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-083",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 83: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-084",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 84: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-085",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 85: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-086",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 86: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-087",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 87: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-088",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 88: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-089",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 89: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-090",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 90: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-091",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 91: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-092",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 92: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-093",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 93: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-094",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 94: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-095",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 95: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-096",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 96: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-097",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 97: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-098",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 98: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-099",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 99: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-100",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 100: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-101",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 101: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-102",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 102: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-103",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 103: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-104",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 104: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-105",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 105: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-106",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 106: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-107",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 107: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-108",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 108: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-109",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 109: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-110",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 110: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-111",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 111: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-112",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 112: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-113",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 113: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-114",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 114: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-115",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 115: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-116",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 116: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-117",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 117: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-118",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 118: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-119",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 119: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-120",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 120: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-121",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 121: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-122",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 122: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-123",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 123: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-124",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 124: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-125",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 125: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-126",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 126: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-127",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 127: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-128",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 128: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-129",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 129: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-130",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 130: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-131",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 131: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-132",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 132: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-133",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 133: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-134",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 134: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-135",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 135: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-136",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 136: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-137",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 137: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-138",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 138: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-139",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 139: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-140",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 140: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-141",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 141: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-142",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 142: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-143",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 143: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-144",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 144: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-145",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 145: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-146",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 146: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-147",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 147: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-148",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 148: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-149",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 149: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-150",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 150: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-151",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 151: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-152",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 152: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-153",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 153: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-154",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 154: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-155",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 155: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-156",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 156: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-157",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 157: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-158",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 158: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-159",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 159: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-160",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 160: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-161",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 161: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-162",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 162: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-163",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 163: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-164",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 164: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-165",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 165: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-166",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 166: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-167",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 167: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-168",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 168: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-169",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 169: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-170",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 170: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-171",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 171: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-172",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 172: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-173",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 173: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-174",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 174: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-175",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 175: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-176",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 176: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-177",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 177: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-178",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 178: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-179",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 179: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-180",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 180: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-181",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 181: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-182",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 182: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-183",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 183: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-184",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 184: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-185",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 185: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-186",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 186: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-187",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 187: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-188",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 188: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-189",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 189: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-190",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 190: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-191",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 191: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-192",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 192: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-193",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 193: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-194",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 194: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-195",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 195: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-196",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 196: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-197",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 197: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-198",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 198: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-199",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 199: summarize confirmed scope only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "case-200",
+      "input": {
+        "turns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "sourceTrust": "trusted",
+            "boundaryBypass": false,
+            "text": "Batch item 200: summarize confirmed scope only."
+          }
+        ]
+      }
+    }
+  ]
+}

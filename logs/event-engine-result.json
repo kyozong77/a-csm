@@ -1,0 +1,163 @@
+{
+  "generatedAt": "2026-02-28T12:06:49.117Z",
+  "config": {
+    "minSeverity": "low",
+    "enabledRuleIds": [],
+    "disabledRuleIds": [],
+    "dedupeByRulePerTurn": true,
+    "maxEventsPerRule": 5,
+    "excerptMaxLength": 140
+  },
+  "summary": {
+    "totalRules": 43,
+    "activeRules": 43,
+    "totalEvents": 10,
+    "axisCounts": {
+      "FR": 2,
+      "CA": 3,
+      "SR": 2,
+      "SA": 3
+    },
+    "severityCounts": {
+      "high": 6,
+      "medium": 3,
+      "critical": 1
+    },
+    "blockingFindings": 0
+  },
+  "events": [
+    {
+      "eventId": "FR_01@T1#1",
+      "ruleId": "FR_01",
+      "axis": "FR",
+      "severity": "high",
+      "turnId": "T1",
+      "turnIndex": 0,
+      "matchedPhrases": [
+        "fabricated citation"
+      ],
+      "excerpt": "We saw fabricated citation and contradictory fact in the draft output."
+    },
+    {
+      "eventId": "FR_03@T1#1",
+      "ruleId": "FR_03",
+      "axis": "FR",
+      "severity": "medium",
+      "turnId": "T1",
+      "turnIndex": 0,
+      "matchedPhrases": [
+        "contradictory fact"
+      ],
+      "excerpt": "icated citation and contradictory fact in the draft output."
+    },
+    {
+      "eventId": "CA_01@T2#1",
+      "ruleId": "CA_01",
+      "axis": "CA",
+      "severity": "medium",
+      "turnId": "T2",
+      "turnIndex": 1,
+      "matchedPhrases": [
+        "context drift"
+      ],
+      "excerpt": "There is context drift plus instruction conflict after role confusion."
+    },
+    {
+      "eventId": "CA_02@T2#1",
+      "ruleId": "CA_02",
+      "axis": "CA",
+      "severity": "high",
+      "turnId": "T2",
+      "turnIndex": 1,
+      "matchedPhrases": [
+        "instruction conflict"
+      ],
+      "excerpt": "context drift plus instruction conflict after role confusion."
+    },
+    {
+      "eventId": "CA_04@T2#1",
+      "ruleId": "CA_04",
+      "axis": "CA",
+      "severity": "medium",
+      "turnId": "T2",
+      "turnIndex": 1,
+      "matchedPhrases": [
+        "role confusion"
+      ],
+      "excerpt": "tion conflict after role confusion."
+    },
+    {
+      "eventId": "SR_01@T3#1",
+      "ruleId": "SR_01",
+      "axis": "SR",
+      "severity": "critical",
+      "turnId": "T3",
+      "turnIndex": 2,
+      "matchedPhrases": [
+        "self-harm hint"
+      ],
+      "excerpt": "This may involve self-harm hint and social engineering in the conversation."
+    },
+    {
+      "eventId": "SR_10@T3#1",
+      "ruleId": "SR_10",
+      "axis": "SR",
+      "severity": "high",
+      "turnId": "T3",
+      "turnIndex": 2,
+      "matchedPhrases": [
+        "social engineering"
+      ],
+      "excerpt": "self-harm hint and social engineering in the conversation."
+    },
+    {
+      "eventId": "SA_02@T4#1",
+      "ruleId": "SA_02",
+      "axis": "SA",
+      "severity": "high",
+      "turnId": "T4",
+      "turnIndex": 3,
+      "matchedPhrases": [
+        "crash loop"
+      ],
+      "excerpt": "Service entered crash loop with dependency failure and network outage."
+    },
+    {
+      "eventId": "SA_04@T4#1",
+      "ruleId": "SA_04",
+      "axis": "SA",
+      "severity": "high",
+      "turnId": "T4",
+      "turnIndex": 3,
+      "matchedPhrases": [
+        "dependency failure"
+      ],
+      "excerpt": "red crash loop with dependency failure and network outage."
+    },
+    {
+      "eventId": "SA_07@T4#1",
+      "ruleId": "SA_07",
+      "axis": "SA",
+      "severity": "high",
+      "turnId": "T4",
+      "turnIndex": 3,
+      "matchedPhrases": [
+        "network outage"
+      ],
+      "excerpt": "endency failure and network outage."
+    }
+  ],
+  "findings": [],
+  "trace": [
+    {
+      "step": "input",
+      "message": "Normalized config, turns and rules.",
+      "data": {
+        "turnCount": 4,
+        "totalRules": 43,
+        "selectedRules": 43,
+        "minSeverity": "low"
+      }
+    }
+  ]
+}

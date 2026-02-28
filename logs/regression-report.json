@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "1.1.0",
+  "decision": "PASS",
+  "generatedAt": "2026-02-28T11:38:01.518Z",
+  "summary": {
+    "baselineCases": 2,
+    "candidateCases": 2,
+    "matchedCases": 2,
+    "totalFailures": 0,
+    "blockingFailures": 0,
+    "warningFailures": 0,
+    "passRate": 1,
+    "failRate": 0,
+    "strictWarningsApplied": false,
+    "failureCounts": {},
+    "mismatchTypeCounts": {}
+  },
+  "failures": [],
+  "matches": [
+    "case-alpha",
+    "case-beta"
+  ],
+  "trend": null,
+  "smoke": {
+    "passed": true,
+    "violations": []
+  }
+}

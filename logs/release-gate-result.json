@@ -1,0 +1,70 @@
+{
+  "decision": "GO",
+  "generatedAt": "2026-02-28T11:31:32.374Z",
+  "config": {
+    "requiredChecks": [
+      "tests",
+      "lint",
+      "build"
+    ],
+    "maxHighPriorityOpen": 0,
+    "maxRegressionFailures": 0,
+    "maxCriticalSecurity": 0,
+    "maxOpenIncidents": 0,
+    "warningHighPriorityOpenAt": null,
+    "minApprovals": 0,
+    "requireSecurityApproval": false,
+    "requireQaApproval": false,
+    "requireExceptionApprovalWhenFrozen": true,
+    "requireRollbackPlanWhenFrozen": true,
+    "requireExceptionTicketWhenFrozen": false,
+    "requireExceptionExpiryWhenFrozen": false,
+    "requireRollbackOwnerWhenFrozen": false,
+    "requireArtifactHashes": false,
+    "requiredArtifacts": [
+      "index.html",
+      "style.css",
+      "app.js",
+      "robots.txt",
+      "sitemap.xml",
+      "privacy/index.html",
+      "terms/index.html"
+    ]
+  },
+  "input": {
+    "checks": {
+      "tests": "pass",
+      "lint": "pass",
+      "build": "pass"
+    },
+    "metrics": {
+      "criticalOpen": 0,
+      "highOpen": 0,
+      "regressionFailures": 0
+    },
+    "freeze": {
+      "active": false,
+      "exceptionApproved": false,
+      "rollbackPlanLinked": false
+    },
+    "artifacts": {
+      "present": [
+        "index.html",
+        "style.css",
+        "app.js",
+        "robots.txt",
+        "sitemap.xml",
+        "privacy/index.html",
+        "terms/index.html"
+      ]
+    }
+  },
+  "findings": [],
+  "summary": {
+    "totalFindings": 0,
+    "blockingFindings": 0,
+    "errorFindings": 0,
+    "warningFindings": 0,
+    "freezeActive": false
+  }
+}

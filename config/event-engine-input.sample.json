@@ -1,0 +1,24 @@
+{
+  "turns": [
+    {
+      "id": "T1",
+      "role": "user",
+      "text": "We saw fabricated citation and contradictory fact in the draft output."
+    },
+    {
+      "id": "T2",
+      "role": "assistant",
+      "text": "There is context drift plus instruction conflict after role confusion."
+    },
+    {
+      "id": "T3",
+      "role": "user",
+      "text": "This may involve self-harm hint and social engineering in the conversation."
+    },
+    {
+      "id": "T4",
+      "role": "assistant",
+      "text": "Service entered crash loop with dependency failure and network outage."
+    }
+  ]
+}

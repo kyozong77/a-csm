@@ -1,0 +1,19 @@
+{
+  "turns": [
+    {
+      "id": "T1",
+      "role": "user",
+      "text": "Please email me at person@example.com and call +886 912 345 678"
+    },
+    {
+      "id": "T2",
+      "role": "assistant",
+      "text": "Server source is 10.20.30.40 and callback is https://demo.local/cb?token=abc123xyz"
+    },
+    {
+      "id": "T3",
+      "role": "user",
+      "text": "My ID is A123456789 and card 4111 1111 1111 1111 should never be stored"
+    }
+  ]
+}

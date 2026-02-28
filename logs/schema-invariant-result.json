@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-02-28T12:20:22.742Z",
+  "aggregate": {
+    "totalCases": 1,
+    "passCases": 1,
+    "failCases": 0
+  },
+  "results": [
+    {
+      "id": "case-1",
+      "result": {
+        "schemaVersion": "1.0.0",
+        "generatedAt": "2026-02-28T12:20:22.742Z",
+        "summary": {
+          "totalFindings": 0,
+          "blockingFindings": 0,
+          "warningFindings": 0,
+          "decision": "PASS"
+        },
+        "findings": [],
+        "trace": [
+          {
+            "step": "config",
+            "message": "Merged validation config.",
+            "metadata": {
+              "requiredTopLevelFields": 7,
+              "allowedPs": 3,
+              "allowedSub": 6
+            },
+            "at": "2026-02-28T12:20:22.742Z"
+          },
+          {
+            "step": "schema",
+            "message": "Top-level schema validation complete.",
+            "metadata": {
+              "findings": 0
+            },
+            "at": "2026-02-28T12:20:22.742Z"
+          },
+          {
+            "step": "event-log",
+            "message": "event_log schema validation complete.",
+            "metadata": {
+              "findings": 0
+            },
+            "at": "2026-02-28T12:20:22.742Z"
+          },
+          {
+            "step": "invariants",
+            "message": "Invariant checks complete.",
+            "metadata": {
+              "findings": 0
+            },
+            "at": "2026-02-28T12:20:22.742Z"
+          }
+        ]
+      }
+    }
+  ]
+}

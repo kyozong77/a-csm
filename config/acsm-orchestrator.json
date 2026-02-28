@@ -1,0 +1,156 @@
+{
+  "schemaVersion": "1.0.0",
+  "deidPolicy": {
+    "detectors": {
+      "email": true,
+      "phone": true,
+      "ipv4": true,
+      "twNationalId": true,
+      "creditCard": true,
+      "sensitiveQueryKeys": true
+    },
+    "replacement": {
+      "strategy": "indexed-token",
+      "fixedToken": "[REDACTED]",
+      "preserveEmailDomain": false,
+      "phoneMaskLastDigits": 2
+    },
+    "audit": {
+      "maxPerType": 100
+    }
+  },
+  "eventEngine": {
+    "minSeverity": "low",
+    "enabledRuleIds": [],
+    "disabledRuleIds": [],
+    "dedupeByRulePerTurn": true,
+    "maxEventsPerRule": 5,
+    "excerptMaxLength": 140
+  },
+  "vcd": {
+    "enabled": true,
+    "minSeverity": "low",
+    "enabledRuleIds": [],
+    "disabledRuleIds": [],
+    "dedupeByRulePerTurn": true,
+    "maxTriggersPerRule": 5,
+    "excerptMaxLength": 160,
+    "trustScores": {
+      "trusted": 0,
+      "unknown": 1,
+      "untrusted": 2
+    },
+    "boundaryBypassScore": 3,
+    "detectBoundaryBypass": true,
+    "triggerThresholds": {
+      "guarded": 1,
+      "triggered": 4,
+      "lockdown": 8
+    },
+    "responseActions": {
+      "CLEAR": "ALLOW",
+      "GUARDED": "WARN_AND_CONSTRAIN",
+      "TRIGGERED": "SAFE_REPLY_ONLY",
+      "LOCKDOWN": "ESCALATE_AND_HALT",
+      "DISABLED": "ALLOW"
+    }
+  },
+  "ledger": {
+    "repeatWindowTurns": 8,
+    "escalateRepeatCount": 3,
+    "maxRangeSpan": 50,
+    "enforceMonotonicTurns": true,
+    "requirePayloadObject": false,
+    "allowCrossLedgerDuplicateKey": true
+  },
+  "tag": {
+    "weights": {
+      "TAG_FCT": 1,
+      "TAG_SAF": 1.4,
+      "TAG_CTX": 1.1,
+      "TAG_SYS": 0.9
+    },
+    "severityScores": {
+      "low": 1,
+      "medium": 2,
+      "high": 4,
+      "critical": 6
+    },
+    "thresholds": {
+      "medium": 4,
+      "high": 8
+    },
+    "conservativeRules": {
+      "multiAxisMediumToHigh": 2,
+      "freezeNoDowngrade": true,
+      "downgradeAfterStableRounds": 2
+    }
+  },
+  "ps": {
+    "axes": ["FR", "CA", "SR", "SA"],
+    "stateThresholds": {
+      "nrmMax": 1,
+      "devMax": 3,
+      "almMin": 4
+    },
+    "tieBreakOrder": ["SR", "CA", "FR", "SA"],
+    "collapseFlag": {
+      "alarmScoreMin": 4,
+      "highAxisCountMin": 2,
+      "highAxisScoreFloor": 3
+    },
+    "evidence": {
+      "maxItems": 3,
+      "fallbackText": "No material evidence provided."
+    }
+  },
+  "schema": {
+    "requiredTopLevelFields": [
+      "schemaVersion",
+      "ps",
+      "sub",
+      "f",
+      "e",
+      "vcd",
+      "event_log"
+    ],
+    "allowedPs": ["ST_NRM", "ST_DEV", "ST_ALM"],
+    "allowedSub": ["SUB_NONE", "SUB_SAFE_MODE", "SUB_FR", "SUB_CA", "SUB_SR", "SUB_SA"],
+    "allowedEventAxis": ["FR", "CA", "SR", "SA"],
+    "allowedEventSeverity": ["low", "medium", "high", "critical"],
+    "maxEvidenceLength": 320,
+    "requireEventIds": true,
+    "invariantRules": {
+      "alarmRequiresFlag": true,
+      "normalRequiresSafeSub": true,
+      "requireTraceWhenVcdTriggered": true,
+      "requireEventTurnOrder": true
+    }
+  },
+  "releaseGate": {
+    "requiredChecks": ["tests", "lint", "build"],
+    "maxHighPriorityOpen": 0,
+    "maxRegressionFailures": 0,
+    "maxCriticalSecurity": 0,
+    "maxOpenIncidents": 0,
+    "warningHighPriorityOpenAt": null,
+    "minApprovals": 0,
+    "requireSecurityApproval": false,
+    "requireQaApproval": false,
+    "requireExceptionApprovalWhenFrozen": true,
+    "requireRollbackPlanWhenFrozen": true,
+    "requireExceptionTicketWhenFrozen": false,
+    "requireExceptionExpiryWhenFrozen": false,
+    "requireRollbackOwnerWhenFrozen": false,
+    "requireArtifactHashes": false,
+    "requiredArtifacts": [
+      "index.html",
+      "style.css",
+      "app.js",
+      "robots.txt",
+      "sitemap.xml",
+      "privacy/index.html",
+      "terms/index.html"
+    ]
+  }
+}

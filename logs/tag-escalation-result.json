@@ -1,0 +1,92 @@
+{
+  "decisionLevel": "HIGH",
+  "generatedAt": "2026-02-28T11:41:08.275Z",
+  "config": {
+    "weights": {
+      "TAG_FCT": 1,
+      "TAG_SAF": 1.4,
+      "TAG_CTX": 1.1,
+      "TAG_SYS": 0.9
+    },
+    "severityScores": {
+      "low": 1,
+      "medium": 2,
+      "high": 4,
+      "critical": 6
+    },
+    "thresholds": {
+      "medium": 4,
+      "high": 8
+    },
+    "conservativeRules": {
+      "multiAxisMediumToHigh": 2,
+      "freezeNoDowngrade": true,
+      "downgradeAfterStableRounds": 2
+    }
+  },
+  "findings": [],
+  "contributions": [
+    {
+      "index": 0,
+      "axis": "TAG_FCT",
+      "severity": "medium",
+      "count": 1,
+      "weight": 1,
+      "severityScore": 2,
+      "weightedScore": 2,
+      "reason": "fact drift detected"
+    },
+    {
+      "index": 1,
+      "axis": "TAG_SAF",
+      "severity": "high",
+      "count": 1,
+      "weight": 1.4,
+      "severityScore": 4,
+      "weightedScore": 5.6,
+      "reason": "unsafe response pattern"
+    }
+  ],
+  "summary": {
+    "eventCount": 2,
+    "distinctAxes": 2,
+    "criticalEvents": 0,
+    "mediumOrAboveAxes": 2,
+    "totalScore": 7.6,
+    "baseLevel": "MEDIUM",
+    "finalLevel": "HIGH",
+    "nextStableRounds": 0,
+    "blockingFindings": 0
+  },
+  "trace": [
+    {
+      "step": "input",
+      "message": "Collected input events and previous state.",
+      "data": {
+        "eventCount": 2,
+        "previousState": {
+          "level": "MEDIUM",
+          "stableRounds": 0
+        }
+      }
+    },
+    {
+      "step": "scoring",
+      "message": "Calculated weighted score and base level.",
+      "data": {
+        "totalScore": 7.6,
+        "baseLevel": "MEDIUM"
+      }
+    },
+    {
+      "step": "conservative-multi-axis",
+      "message": "Multiple medium-or-above axes escalated level to HIGH.",
+      "data": {
+        "mediumOrAboveAxes": [
+          "TAG_FCT",
+          "TAG_SAF"
+        ]
+      }
+    }
+  ]
+}

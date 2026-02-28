@@ -1,0 +1,21 @@
+{
+  "name": "codex-main",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "audit:workspace": "node scripts/workspace-audit.mjs --output logs/workspace-audit.json",
+    "acsm:run": "node scripts/acsm-orchestrator.mjs",
+    "acsm:run:batch": "node scripts/acsm-batch-runner.mjs",
+    "acsm:run:200": "node scripts/acsm-batch-runner.mjs --input config/acsm-batch-input.200.sample.json --config config/acsm-orchestrator.json --output logs/acsm-batch-200-result.json --format both --max-cases 200",
+    "regression:check": "node scripts/regression-suite.mjs",
+    "tag:check": "node scripts/tag-escalation.mjs",
+    "derive:ps": "node scripts/ps-sub-fe-core.mjs",
+    "deid:check": "node scripts/deid-pipeline.mjs",
+    "events:check": "node scripts/event-engine-v1.mjs",
+    "schema:check": "node scripts/schema-invariant-service.mjs",
+    "ledger:check": "node scripts/ledger-repeat-engine.mjs",
+    "vcd:check": "node scripts/vcd-inference.mjs"
+  }
+}

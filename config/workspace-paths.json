@@ -1,0 +1,11 @@
+{
+  "requiredPaths": [
+    "/Users/bjhon/CascadeProjects/Codex_Main",
+    "/Users/bjhon/CascadeProjects/Z_RZVN_Web/src/app/research/usci",
+    "/Users/bjhon/Downloads/ZENODO_PUBLIC"
+  ],
+  "referencePaths": [
+    "/Users/bjhon/CascadeProjects/Codex_Main/_usci_split_en"
+  ],
+  "note": "Missing reference paths are informational only and do not block workspace readiness."
+}

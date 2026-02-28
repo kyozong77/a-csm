@@ -1,0 +1,26 @@
+{
+  "requiredChecks": ["tests", "lint", "build"],
+  "maxHighPriorityOpen": 0,
+  "maxRegressionFailures": 0,
+  "maxCriticalSecurity": 0,
+  "maxOpenIncidents": 0,
+  "warningHighPriorityOpenAt": null,
+  "minApprovals": 0,
+  "requireSecurityApproval": false,
+  "requireQaApproval": false,
+  "requireExceptionApprovalWhenFrozen": true,
+  "requireRollbackPlanWhenFrozen": true,
+  "requireExceptionTicketWhenFrozen": false,
+  "requireExceptionExpiryWhenFrozen": false,
+  "requireRollbackOwnerWhenFrozen": false,
+  "requireArtifactHashes": false,
+  "requiredArtifacts": [
+    "index.html",
+    "style.css",
+    "app.js",
+    "robots.txt",
+    "sitemap.xml",
+    "privacy/index.html",
+    "terms/index.html"
+  ]
+}

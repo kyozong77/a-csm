@@ -1,0 +1,25 @@
+{
+  "turns": [
+    {
+      "id": "T1",
+      "role": "user",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false,
+      "text": "Please contact me via person@example.com for the project timeline summary."
+    },
+    {
+      "id": "T2",
+      "role": "assistant",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false,
+      "text": "I will provide a concise status summary using only the confirmed scope."
+    },
+    {
+      "id": "T3",
+      "role": "user",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false,
+      "text": "Great. Keep all outputs aligned with the stated requirements."
+    }
+  ]
+}

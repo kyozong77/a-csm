@@ -1,0 +1,149 @@
+{
+  "generatedAt": "2026-02-28T11:53:15.251Z",
+  "policy": {
+    "detectors": {
+      "email": true,
+      "phone": true,
+      "ipv4": true,
+      "twNationalId": true,
+      "creditCard": true,
+      "sensitiveQueryKeys": true
+    },
+    "replacement": {
+      "strategy": "indexed-token",
+      "fixedToken": "[REDACTED]",
+      "preserveEmailDomain": false,
+      "phoneMaskLastDigits": 2
+    },
+    "audit": {
+      "maxPerType": 100
+    }
+  },
+  "findings": [],
+  "trace": [
+    {
+      "step": "pipeline",
+      "message": "Applied detector and replacement policy.",
+      "data": {
+        "mode": "turns",
+        "replacements": 6,
+        "types": [
+          "email",
+          "phone",
+          "ipv4",
+          "query_secret",
+          "tw_national_id",
+          "credit_card"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "blockingFindings": 0,
+    "totalReplacements": 6,
+    "countsByType": {
+      "email": 1,
+      "phone": 1,
+      "ipv4": 1,
+      "query_secret": 1,
+      "tw_national_id": 1,
+      "credit_card": 1
+    },
+    "piiTypesDetected": [
+      "credit_card",
+      "email",
+      "ipv4",
+      "phone",
+      "query_secret",
+      "tw_national_id"
+    ]
+  },
+  "replacements": [
+    {
+      "id": "TURN1-R2",
+      "type": "email",
+      "start": 19,
+      "end": 37,
+      "length": 18,
+      "digestBefore": "542d240129883c01",
+      "replacement": "[EMAIL_1]",
+      "turnId": "T1",
+      "turnIndex": 0
+    },
+    {
+      "id": "TURN1-R1",
+      "type": "phone",
+      "start": 47,
+      "end": 63,
+      "length": 16,
+      "digestBefore": "926a061db75d5120",
+      "replacement": "[PHONE_1]_*78",
+      "turnId": "T1",
+      "turnIndex": 0
+    },
+    {
+      "id": "TURN2-R2",
+      "type": "ipv4",
+      "start": 17,
+      "end": 28,
+      "length": 11,
+      "digestBefore": "fec9cdeaf025e268",
+      "replacement": "[IPV4_1]",
+      "turnId": "T2",
+      "turnIndex": 1
+    },
+    {
+      "id": "TURN2-R1",
+      "type": "query_secret",
+      "start": 73,
+      "end": 82,
+      "length": 9,
+      "digestBefore": "604365fa1146d17e",
+      "replacement": "[QUERY_SECRET_1]",
+      "key": "token",
+      "turnId": "T2",
+      "turnIndex": 1
+    },
+    {
+      "id": "TURN3-R2",
+      "type": "tw_national_id",
+      "start": 9,
+      "end": 19,
+      "length": 10,
+      "digestBefore": "51ff20a57253f7f0",
+      "replacement": "[TW_NATIONAL_ID_1]",
+      "turnId": "T3",
+      "turnIndex": 2
+    },
+    {
+      "id": "TURN3-R1",
+      "type": "credit_card",
+      "start": 29,
+      "end": 48,
+      "length": 19,
+      "digestBefore": "6a7e0e79b018d08c",
+      "replacement": "[CREDIT_CARD_1]",
+      "turnId": "T3",
+      "turnIndex": 2
+    }
+  ],
+  "mode": "turns",
+  "originalTurnCount": 3,
+  "redactedTurns": [
+    {
+      "id": "T1",
+      "role": "user",
+      "text": "Please email me at [EMAIL_1] and call [PHONE_1]_*78"
+    },
+    {
+      "id": "T2",
+      "role": "assistant",
+      "text": "Server source is [IPV4_1] and callback is https://demo.local/cb?token=[QUERY_SECRET_1]"
+    },
+    {
+      "id": "T3",
+      "role": "user",
+      "text": "My ID is [TW_NATIONAL_ID_1] and card [CREDIT_CARD_1] should never be stored"
+    }
+  ]
+}

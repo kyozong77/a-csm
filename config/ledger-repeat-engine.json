@@ -1,0 +1,8 @@
+{
+  "repeatWindowTurns": 8,
+  "escalateRepeatCount": 3,
+  "maxRangeSpan": 50,
+  "enforceMonotonicTurns": true,
+  "requirePayloadObject": false,
+  "allowCrossLedgerDuplicateKey": true
+}
