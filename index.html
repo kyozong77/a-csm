@@ -4,9 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RZVN — ZON RZVN | Independent Researcher | Taiwan</title>
+  <meta name="description" content="Official RZVN research website by ZON RZVN. Independent research on user-side contextual risk, USCH, USCI, and AI contextual safety frameworks." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="canonical" href="https://z-rzvn-web.vercel.app/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="RZVN — ZON RZVN | Independent Researcher | Taiwan" />
+  <meta property="og:description" content="Independent research on user-side contextual risk, USCH, USCI, and AI contextual safety frameworks." />
+  <meta property="og:url" content="https://z-rzvn-web.vercel.app/" />
+  <meta property="og:image" content="https://z-rzvn-web.vercel.app/assets/rzvn-logo-white.png" />
+  <meta property="og:site_name" content="RZVN" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="RZVN — ZON RZVN" />
+  <meta name="twitter:description" content="Independent research on user-side contextual risk and AI contextual safety frameworks." />
+  <meta name="twitter:image" content="https://z-rzvn-web.vercel.app/assets/rzvn-logo-white.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="./assets/ZON-RZVN-3.avif" type="image/avif" fetchpriority="high" />
   <link rel="icon" type="image/png" href="./assets/rzvn-logo-white.png" />
   <link rel="stylesheet" href="./style.css" />
 </head>
@@ -21,7 +36,7 @@
   <nav class="nav" id="nav">
     <div class="nav__inner">
       <a href="#hero" class="nav__logo">
-        <img src="./assets/rzvn-logo-white.png" alt="RZVN" class="nav__logo-img" />
+        <img src="./assets/rzvn-logo-white.png" alt="RZVN" class="nav__logo-img" width="1080" height="1080" decoding="async" fetchpriority="high" />
       </a>
       <ul class="nav__links">
         <li><a href="#mission">Mission</a></li>
@@ -47,7 +62,7 @@
        SECTION 1 — HERO
   ═══════════════════════════════════════════ -->
   <section class="hero" id="hero">
-    <div class="hero__bg-image" style="background-image: url('./assets/ZON-RZVN-3.webp');" aria-hidden="true"></div>
+    <div class="hero__bg-image" style="background-image: url('./assets/ZON-RZVN-3.webp'); background-image: image-set(url('./assets/ZON-RZVN-3.avif') type('image/avif'), url('./assets/ZON-RZVN-3.webp') type('image/webp'));" aria-hidden="true"></div>
     <div class="hero__bg-overlay" aria-hidden="true"></div>
     <div class="hero__particles" id="heroParticles" aria-hidden="true"></div>
 
@@ -81,7 +96,10 @@
   <section class="mission section" id="mission">
     <div class="mission__image-col" aria-hidden="true">
       <div class="mission__img-wrap">
-        <img src="./assets/Wei-Ming-Ming-She-Ji.webp" alt="Luminous ring portal — dark rocks" class="mission__img" />
+        <picture>
+          <source srcset="./assets/Wei-Ming-Ming-She-Ji.avif" type="image/avif" />
+          <img src="./assets/Wei-Ming-Ming-She-Ji.webp" alt="Luminous ring portal — dark rocks" class="mission__img" width="1921" height="1080" loading="lazy" decoding="async" />
+        </picture>
         <div class="mission__img-overlay"></div>
       </div>
     </div>
@@ -118,7 +136,7 @@
   ═══════════════════════════════════════════ -->
   <section class="architecture section" id="architecture">
     <div class="architecture__bg-image" aria-hidden="true"
-      style="background-image: url('./assets/ZON-RZVN-2.webp');"></div>
+      style="background-image: url('./assets/ZON-RZVN-2.webp'); background-image: image-set(url('./assets/ZON-RZVN-2.avif') type('image/avif'), url('./assets/ZON-RZVN-2.webp') type('image/webp'));"></div>
     <div class="architecture__bg-overlay" aria-hidden="true"></div>
 
     <div class="container">
@@ -223,7 +241,10 @@
   <section class="acsm section" id="acsm">
     <div class="acsm__image-col" aria-hidden="true">
       <div class="acsm__img-wrap">
-        <img src="./assets/ZON-RZVN-10.webp" alt="Abstract glitch data visualization" class="acsm__img" />
+        <picture>
+          <source srcset="./assets/ZON-RZVN-10.avif" type="image/avif" />
+          <img src="./assets/ZON-RZVN-10.webp" alt="Abstract glitch data visualization" class="acsm__img" width="1024" height="1024" loading="lazy" decoding="async" />
+        </picture>
         <div class="acsm__img-overlay"></div>
       </div>
     </div>
@@ -265,7 +286,7 @@
   ═══════════════════════════════════════════ -->
   <section class="usci section" id="usci">
     <div class="usci__bg" aria-hidden="true"
-      style="background-image: url('./assets/abstract-planes.webp');"></div>
+      style="background-image: url('./assets/abstract-planes.webp'); background-image: image-set(url('./assets/abstract-planes.avif') type('image/avif'), url('./assets/abstract-planes.webp') type('image/webp'));"></div>
     <div class="usci__bg-overlay" aria-hidden="true"></div>
 
     <div class="container usci__container">
@@ -376,7 +397,10 @@
 
         <div class="paper-card reveal-up delay-1">
           <div class="paper-card__image">
-            <img src="./assets/ZON-RZVN-7.webp" alt="Abstract crystal with light" />
+            <picture>
+              <source srcset="./assets/ZON-RZVN-7.avif" type="image/avif" />
+              <img src="./assets/ZON-RZVN-7.webp" alt="Abstract crystal with light" width="1024" height="1024" loading="lazy" decoding="async" fetchpriority="low" />
+            </picture>
             <div class="paper-card__image-overlay"></div>
           </div>
           <div class="paper-card__content">
@@ -393,7 +417,10 @@
 
         <div class="paper-card reveal-up delay-2">
           <div class="paper-card__image">
-            <img src="./assets/ZON-RZVN-1.webp" alt="Glass cubes overlapping" />
+            <picture>
+              <source srcset="./assets/ZON-RZVN-1.avif" type="image/avif" />
+              <img src="./assets/ZON-RZVN-1.webp" alt="Glass cubes overlapping" width="1344" height="896" loading="lazy" decoding="async" fetchpriority="low" />
+            </picture>
             <div class="paper-card__image-overlay"></div>
           </div>
           <div class="paper-card__content">
@@ -410,7 +437,10 @@
 
         <div class="paper-card reveal-up delay-3">
           <div class="paper-card__image">
-            <img src="./assets/ZON-RZVN-8.webp" alt="Raven in flight" />
+            <picture>
+              <source srcset="./assets/ZON-RZVN-8.avif" type="image/avif" />
+              <img src="./assets/ZON-RZVN-8.webp" alt="Raven in flight" width="1024" height="1024" loading="lazy" decoding="async" fetchpriority="low" />
+            </picture>
             <div class="paper-card__image-overlay"></div>
           </div>
           <div class="paper-card__content">
@@ -427,7 +457,10 @@
 
         <div class="paper-card reveal-up delay-4">
           <div class="paper-card__image">
-            <img src="./assets/ZON-RZVN-2.webp" alt="Abstract geometric perspective corridor" />
+            <picture>
+              <source srcset="./assets/ZON-RZVN-2.avif" type="image/avif" />
+              <img src="./assets/ZON-RZVN-2.webp" alt="Abstract geometric perspective corridor" width="1344" height="896" loading="lazy" decoding="async" fetchpriority="low" />
+            </picture>
             <div class="paper-card__image-overlay"></div>
           </div>
           <div class="paper-card__content">
@@ -455,7 +488,7 @@
   ═══════════════════════════════════════════ -->
   <section class="boundaries section" id="boundaries">
     <div class="boundaries__bg" aria-hidden="true"
-      style="background-image: url('./assets/ZON-RZVN-9.webp');"></div>
+      style="background-image: url('./assets/ZON-RZVN-9.webp'); background-image: image-set(url('./assets/ZON-RZVN-9.avif') type('image/avif'), url('./assets/ZON-RZVN-9.webp') type('image/webp'));"></div>
     <div class="boundaries__bg-overlay" aria-hidden="true"></div>
 
     <div class="container">
@@ -535,7 +568,7 @@
   <footer class="footer">
     <div class="footer__top">
       <div class="footer__logo-block">
-        <img src="./assets/rzvn-logo-white.png" alt="RZVN" class="footer__logo-img" />
+        <img src="./assets/rzvn-logo-white.png" alt="RZVN" class="footer__logo-img" width="1080" height="1080" loading="lazy" decoding="async" />
         <p class="footer__tagline">ZON RZVN | Independent Researcher | Taiwan</p>
       </div>
       <nav class="footer__nav" aria-label="Footer navigation">
@@ -552,7 +585,7 @@
     <div class="footer__company">
       <p class="footer__company-copy">© 2026 Valyrx Labs</p>
       <p class="footer__company-detail">Operated by Valyrx Labs LLC, Delaware, USA</p>
-      <p class="footer__company-legal">All rights reserved. <span class="footer__legal-sep">|</span> <a href="/privacy.html" class="footer__legal-link">Privacy Policy</a> <span class="footer__legal-sep">|</span> <a href="/terms.html" class="footer__legal-link">Terms of Service</a> <span class="footer__legal-sep">|</span> Not a medical device</p>
+      <p class="footer__company-legal">All rights reserved. <span class="footer__legal-sep">|</span> <a href="/privacy" class="footer__legal-link">Privacy Policy</a> <span class="footer__legal-sep">|</span> <a href="/terms" class="footer__legal-link">Terms of Service</a> <span class="footer__legal-sep">|</span> Not a medical device</p>
       <p class="footer__disclaimer">This website is for research information exchange purposes only and is not intended for clinical or legal determination.</p>
     </div>
   </footer>

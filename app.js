@@ -16,22 +16,39 @@
   const heroContent = document.querySelector('.hero__content');
   const heroWordmark = document.querySelector('.hero__wordmark-text');
   const heroLine = document.querySelector('.hero__wordmark-line');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // Initially hide everything
   if (hero) {
     hero.style.opacity = '1';
     if (heroBg) {
-      heroBg.style.transform = 'scale(1.3)';
-      heroBg.style.filter = 'grayscale(100%) brightness(0) blur(10px)';
-      heroBg.style.transition = 'none';
+      if (prefersReducedMotion) {
+        heroBg.style.transform = 'scale(1.05)';
+        heroBg.style.filter = 'grayscale(100%) brightness(0.35) blur(0px)';
+      } else {
+        heroBg.style.transform = 'scale(1.3)';
+        heroBg.style.filter = 'grayscale(100%) brightness(0) blur(10px)';
+        heroBg.style.transition = 'none';
+      }
     }
     if (heroContent) {
-      heroContent.style.opacity = '0';
-      heroContent.style.transition = 'none';
+      if (prefersReducedMotion) {
+        heroContent.style.opacity = '1';
+      } else {
+        heroContent.style.opacity = '0';
+        heroContent.style.transition = 'none';
+      }
     }
   }
 
   window.addEventListener('load', function () {
+    if (prefersReducedMotion) {
+      revealElements.forEach(function (el) {
+        el.classList.add('revealed');
+      });
+      return;
+    }
+
     // Phase 1: Background reveals with cinematic zoom-out + brighten
     if (heroBg) {
       requestAnimationFrame(function () {
@@ -83,6 +100,7 @@
   const nav = document.getElementById('nav');
 
   function handleNavScroll() {
+    if (!nav) return;
     if (window.scrollY > 60) {
       nav.classList.add('scrolled');
     } else {
@@ -133,20 +151,27 @@
     '.reveal-up, .reveal-fade, .reveal-left, .reveal-scale'
   );
 
-  const revealObserver = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.1,
-      rootMargin: '0px 0px -60px 0px',
-    }
-  );
+  let revealObserver = null;
+  if (!prefersReducedMotion) {
+    revealObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -60px 0px',
+      }
+    );
+  } else {
+    revealElements.forEach(function (el) {
+      el.classList.add('revealed');
+    });
+  }
 
   // ─────────────────────────────────────────
   // 4. HERO PARALLAX + SUBTLE MOUSE TRACK
@@ -160,10 +185,12 @@
     }
   }
 
-  window.addEventListener('scroll', handleParallax, { passive: true });
+  if (!prefersReducedMotion) {
+    window.addEventListener('scroll', handleParallax, { passive: true });
+  }
 
   // Mouse-driven subtle tilt on hero
-  if (hero) {
+  if (hero && !prefersReducedMotion) {
     hero.addEventListener('mousemove', function (e) {
       if (!heroBg) return;
       const rect = hero.getBoundingClientRect();
@@ -208,7 +235,9 @@
     }
   }
 
-  createParticles();
+  if (!prefersReducedMotion) {
+    createParticles();
+  }
 
   // ─────────────────────────────────────────
   // 6. SMOOTH SCROLL
@@ -236,21 +265,25 @@
   if (radarSection && radarPolygon) {
     const finalPoints = '200,75 325,200 200,340 90,200';
     const centerPoints = '200,200 200,200 200,200 200,200';
-    radarPolygon.setAttribute('points', centerPoints);
-    radarPolygon.style.transition = 'none';
+    if (prefersReducedMotion) {
+      radarPolygon.setAttribute('points', finalPoints);
+    } else {
+      radarPolygon.setAttribute('points', centerPoints);
+      radarPolygon.style.transition = 'none';
 
-    const radarObserver = new IntersectionObserver(
-      function (entries) {
-        if (entries[0].isIntersecting) {
-          setTimeout(function () {
-            animateRadar(radarPolygon, centerPoints, finalPoints, 1200);
-          }, 400);
-          radarObserver.unobserve(radarSection);
-        }
-      },
-      { threshold: 0.3 }
-    );
-    radarObserver.observe(radarSection);
+      const radarObserver = new IntersectionObserver(
+        function (entries) {
+          if (entries[0].isIntersecting) {
+            setTimeout(function () {
+              animateRadar(radarPolygon, centerPoints, finalPoints, 1200);
+            }, 400);
+            radarObserver.unobserve(radarSection);
+          }
+        },
+        { threshold: 0.3 }
+      );
+      radarObserver.observe(radarSection);
+    }
   }
 
   function animateRadar(polygon, fromPoints, toPoints, duration) {
@@ -304,21 +337,28 @@
   const statNums = document.querySelectorAll('.mission__stat-num');
 
   if (statsSection && statNums.length) {
-    let animated = false;
-    const statsObserver = new IntersectionObserver(
-      function (entries) {
-        if (entries[0].isIntersecting && !animated) {
-          animated = true;
-          statNums.forEach(function (el) {
-            const target = parseInt(el.textContent, 10);
-            animateNumber(el, 0, target, 1000);
-          });
-          statsObserver.unobserve(statsSection);
-        }
-      },
-      { threshold: 0.5 }
-    );
-    statsObserver.observe(statsSection);
+    if (prefersReducedMotion) {
+      statNums.forEach(function (el) {
+        const target = parseInt(el.textContent, 10);
+        el.textContent = String(target);
+      });
+    } else {
+      let animated = false;
+      const statsObserver = new IntersectionObserver(
+        function (entries) {
+          if (entries[0].isIntersecting && !animated) {
+            animated = true;
+            statNums.forEach(function (el) {
+              const target = parseInt(el.textContent, 10);
+              animateNumber(el, 0, target, 1000);
+            });
+            statsObserver.unobserve(statsSection);
+          }
+        },
+        { threshold: 0.5 }
+      );
+      statsObserver.observe(statsSection);
+    }
   }
 
   function animateNumber(el, from, to, duration) {
@@ -366,7 +406,9 @@
     scanContainer.setAttribute('aria-hidden', 'true');
     document.body.appendChild(scanContainer);
   }
-  createScanLines();
+  if (!prefersReducedMotion) {
+    createScanLines();
+  }
 
   // ─────────────────────────────────────────
   // 12. SECTION IMAGE PARALLAX on scroll
@@ -385,12 +427,14 @@
     });
   }
 
-  window.addEventListener('scroll', handleImageParallax, { passive: true });
+  if (!prefersReducedMotion) {
+    window.addEventListener('scroll', handleImageParallax, { passive: true });
+  }
 
   // ─────────────────────────────────────────
   // 13. CURSOR GLOW TRAIL (desktop only)
   // ─────────────────────────────────────────
-  if (window.matchMedia('(pointer: fine)').matches) {
+  if (!prefersReducedMotion && window.matchMedia('(pointer: fine)').matches) {
     const cursorGlow = document.createElement('div');
     cursorGlow.className = 'cursor-glow';
     cursorGlow.setAttribute('aria-hidden', 'true');
@@ -416,19 +460,21 @@
   // ─────────────────────────────────────────
   // 14. BUTTON RIPPLE EFFECT
   // ─────────────────────────────────────────
-  document.querySelectorAll('.btn, .btn--ghost-sm').forEach(function (btn) {
-    btn.addEventListener('click', function (e) {
-      const ripple = document.createElement('span');
-      ripple.className = 'btn-ripple';
-      const rect = btn.getBoundingClientRect();
-      const size = Math.max(rect.width, rect.height);
-      ripple.style.width = ripple.style.height = size + 'px';
-      ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
-      ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
-      btn.appendChild(ripple);
-      setTimeout(function () { ripple.remove(); }, 700);
+  if (!prefersReducedMotion) {
+    document.querySelectorAll('.btn, .btn--ghost-sm').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        const ripple = document.createElement('span');
+        ripple.className = 'btn-ripple';
+        const rect = btn.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+        ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+        btn.appendChild(ripple);
+        setTimeout(function () { ripple.remove(); }, 700);
+      });
     });
-  });
+  }
 
   // ─────────────────────────────────────────
   // 15. TEXT SCRAMBLE on section titles
@@ -470,28 +516,30 @@
   }
 
   // Observe section titles for scramble effect
-  var titleScrambleObserver = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          setTimeout(function () {
-            scrambleText(entry.target);
-          }, 200);
-          titleScrambleObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.3 }
-  );
+  if (!prefersReducedMotion) {
+    var titleScrambleObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            setTimeout(function () {
+              scrambleText(entry.target);
+            }, 200);
+            titleScrambleObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
 
-  document.querySelectorAll('.section-title').forEach(function (title) {
-    titleScrambleObserver.observe(title);
-  });
+    document.querySelectorAll('.section-title').forEach(function (title) {
+      titleScrambleObserver.observe(title);
+    });
+  }
 
   // ─────────────────────────────────────────
   // 16. PAPER CARD 3D TILT on mouse move
   // ─────────────────────────────────────────
-  if (window.matchMedia('(pointer: fine)').matches) {
+  if (!prefersReducedMotion && window.matchMedia('(pointer: fine)').matches) {
     document.querySelectorAll('.paper-card').forEach(function (card) {
       card.addEventListener('mousemove', function (e) {
         var rect = card.getBoundingClientRect();
@@ -508,7 +556,7 @@
   // ─────────────────────────────────────────
   // 17. MAGNETIC BUTTON EFFECT
   // ─────────────────────────────────────────
-  if (window.matchMedia('(pointer: fine)').matches) {
+  if (!prefersReducedMotion && window.matchMedia('(pointer: fine)').matches) {
     document.querySelectorAll('.btn--green, .nav__cta').forEach(function (btn) {
       btn.addEventListener('mousemove', function (e) {
         var rect = btn.getBoundingClientRect();

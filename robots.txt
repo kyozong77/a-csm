@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://z-rzvn-web.vercel.app/sitemap.xml
