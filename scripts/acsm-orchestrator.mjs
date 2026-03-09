@@ -559,7 +559,119 @@ function countBlockingFromSummary(result) {
   return 0;
 }
 
-export { computeStabilityIndex, computeConfidenceInterval, computeRiskStatus };
+const RISK_RANK = { CLEAR: 0, LOW: 1, MEDIUM: 2, HIGH: 3, CRITICAL: 4 };
+
+function validateReportConsistency(report) {
+  const violations = [];
+
+  const s = report.summary;
+  const steps = report.steps;
+
+  if (s.blockingFindings > 0 && report.decision !== "NO_GO") {
+    violations.push({
+      rule: "blocking-implies-no-go",
+      message: "blockingFindings > 0 but decision is not NO_GO.",
+      severity: "error"
+    });
+  }
+
+  if (s.releaseGateDecision === "NO_GO" && report.decision !== "NO_GO") {
+    violations.push({
+      rule: "gate-no-go-implies-decision-no-go",
+      message: "releaseGateDecision is NO_GO but decision is not NO_GO.",
+      severity: "error"
+    });
+  }
+
+  if (s.riskStatus === "CRITICAL" && report.decision !== "NO_GO") {
+    violations.push({
+      rule: "critical-risk-implies-no-go",
+      message: "riskStatus is CRITICAL but decision is not NO_GO.",
+      severity: "warning"
+    });
+  }
+
+  if (steps?.ps?.ps === "ST_ALM" && steps?.ps?.f?.triggered !== true && report.derived?.schemaInput?.f !== true) {
+    violations.push({
+      rule: "alarm-requires-flag",
+      message: "PS is ST_ALM but flag (f) is not triggered.",
+      severity: "error"
+    });
+  }
+
+  if (s.vcdStatus === "LOCKDOWN" && (RISK_RANK[s.riskStatus] ?? 0) < RISK_RANK.HIGH) {
+    violations.push({
+      rule: "lockdown-implies-high-risk",
+      message: "VCD status is LOCKDOWN but riskStatus is below HIGH.",
+      severity: "error"
+    });
+  }
+
+  if (s.vcdStatus === "TRIGGERED" && (RISK_RANK[s.riskStatus] ?? 0) < RISK_RANK.HIGH) {
+    violations.push({
+      rule: "triggered-implies-high-risk",
+      message: "VCD status is TRIGGERED but riskStatus is below HIGH.",
+      severity: "error"
+    });
+  }
+
+  if (s.tagDecisionLevel === "HIGH" && (RISK_RANK[s.riskStatus] ?? 0) < RISK_RANK.HIGH) {
+    violations.push({
+      rule: "tag-high-implies-high-risk",
+      message: "TAG level is HIGH but riskStatus is below HIGH.",
+      severity: "error"
+    });
+  }
+
+  if (typeof s.stabilityIndex !== "number" || s.stabilityIndex < 0 || s.stabilityIndex > 1) {
+    violations.push({
+      rule: "stability-index-range",
+      message: "stabilityIndex must be a number between 0 and 1.",
+      severity: "error"
+    });
+  }
+
+  if (typeof s.confidenceInterval !== "number" || s.confidenceInterval < 0 || s.confidenceInterval > 1) {
+    violations.push({
+      rule: "confidence-interval-range",
+      message: "confidenceInterval must be a number between 0 and 1.",
+      severity: "error"
+    });
+  }
+
+  if (!["CRITICAL", "HIGH", "MEDIUM", "LOW", "CLEAR"].includes(s.riskStatus)) {
+    violations.push({
+      rule: "risk-status-enum",
+      message: "riskStatus must be one of CRITICAL, HIGH, MEDIUM, LOW, CLEAR.",
+      severity: "error"
+    });
+  }
+
+  if (s.schemaDecision === "FAIL" && s.stageBlockingBeforeGate === 0) {
+    violations.push({
+      rule: "schema-fail-implies-stage-blocking",
+      message: "Schema decision is FAIL but stageBlockingBeforeGate is 0.",
+      severity: "warning"
+    });
+  }
+
+  if (report.decision === "GO" && s.stageBlockingBeforeGate > 0) {
+    violations.push({
+      rule: "stage-blocking-implies-no-go",
+      message: "stageBlockingBeforeGate > 0 but decision is GO.",
+      severity: "error"
+    });
+  }
+
+  const errorViolations = violations.filter((v) => v.severity === "error");
+  return {
+    consistent: errorViolations.length === 0,
+    violationCount: violations.length,
+    violations
+  };
+}
+
+export { computeStabilityIndex, computeConfidenceInterval, computeRiskStatus, validateReportConsistency };
 
 export function runAcsmOrchestrator(rawInput = {}, rawConfig = {}) {
   const findings = [];
