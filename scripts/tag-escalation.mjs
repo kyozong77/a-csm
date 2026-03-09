@@ -17,6 +17,7 @@ const DEFAULT_CONFIG = {
   },
   thresholds: {
     medium: 4,
+    deviate: 6,
     high: 8
   },
   conservativeRules: {
@@ -29,7 +30,8 @@ const DEFAULT_CONFIG = {
 const LEVEL_RANK = {
   LOW: 1,
   MEDIUM: 2,
-  HIGH: 3
+  DEVIATE: 3,
+  HIGH: 4
 };
 
 function clone(value) {
@@ -126,20 +128,37 @@ function normalizeConfig(rawConfig, findings) {
     config.thresholds.medium,
     "thresholds.medium"
   );
+  const deviateThreshold = parseNonNegativeNumber(
+    findings,
+    config.thresholds.deviate,
+    "thresholds.deviate"
+  );
   const highThreshold = parseNonNegativeNumber(findings, config.thresholds.high, "thresholds.high");
   if (mediumThreshold !== null) {
     config.thresholds.medium = mediumThreshold;
+  }
+  if (deviateThreshold !== null) {
+    config.thresholds.deviate = deviateThreshold;
   }
   if (highThreshold !== null) {
     config.thresholds.high = highThreshold;
   }
 
-  if (mediumThreshold !== null && highThreshold !== null && mediumThreshold > highThreshold) {
+  if (mediumThreshold !== null && deviateThreshold !== null && mediumThreshold > deviateThreshold) {
     addFinding(
       findings,
       "config-thresholds-range-invalid",
       "error",
-      "Config 'thresholds.medium' cannot exceed 'thresholds.high'.",
+      "Config 'thresholds.medium' cannot exceed 'thresholds.deviate'.",
+      true
+    );
+  }
+  if (deviateThreshold !== null && highThreshold !== null && deviateThreshold > highThreshold) {
+    addFinding(
+      findings,
+      "config-thresholds-range-invalid",
+      "error",
+      "Config 'thresholds.deviate' cannot exceed 'thresholds.high'.",
       true
     );
   }
@@ -235,6 +254,9 @@ function normalizeEvents(rawEvents, config, findings) {
 function levelFromScore(score, thresholds) {
   if (score >= thresholds.high) {
     return "HIGH";
+  }
+  if (score >= thresholds.deviate) {
+    return "DEVIATE";
   }
   if (score >= thresholds.medium) {
     return "MEDIUM";

@@ -13,6 +13,7 @@
   },
   "thresholds": {
     "medium": 4,
+    "deviate": 6,
     "high": 8
   },
   "conservativeRules": {

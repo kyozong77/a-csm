@@ -21,6 +21,7 @@ const baseConfig = {
   },
   thresholds: {
     medium: 4,
+    deviate: 6,
     high: 8
   },
   conservativeRules: {
@@ -68,7 +69,7 @@ test("03 computes HIGH decision for high threshold", () => {
 test("04 critical event escalates to HIGH", () => {
   const result = evaluateTagEscalation(input([event("TAG_FCT", "critical")]), {
     ...baseConfig,
-    thresholds: { medium: 10, high: 50 }
+    thresholds: { medium: 10, deviate: 30, high: 50 }
   });
   assert.equal(result.decisionLevel, "HIGH");
   assert.ok(result.trace.some((step) => step.step === "conservative-critical"));
@@ -79,7 +80,7 @@ test("05 multi-axis medium escalates to HIGH", () => {
     input([event("TAG_FCT", "medium"), event("TAG_CTX", "medium")]),
     {
       ...baseConfig,
-      thresholds: { medium: 6, high: 12 },
+      thresholds: { medium: 6, deviate: 9, high: 12 },
       conservativeRules: { ...baseConfig.conservativeRules, multiAxisMediumToHigh: 2 }
     }
   );
@@ -91,7 +92,7 @@ test("05 multi-axis medium escalates to HIGH", () => {
 test("06 single-axis medium does not trigger multi-axis rule", () => {
   const result = evaluateTagEscalation(input([event("TAG_FCT", "medium")]), {
     ...baseConfig,
-    thresholds: { medium: 6, high: 12 },
+    thresholds: { medium: 6, deviate: 9, high: 12 },
     conservativeRules: { ...baseConfig.conservativeRules, multiAxisMediumToHigh: 2 }
   });
   assert.equal(result.decisionLevel, "LOW");
@@ -155,7 +156,7 @@ test("15 finds invalid event count", () => {
 test("16 invalid config threshold range is blocked", () => {
   const result = evaluateTagEscalation(input([event("TAG_FCT", "low")]), {
     ...baseConfig,
-    thresholds: { medium: 9, high: 8 }
+    thresholds: { medium: 9, deviate: 10, high: 8 }
   });
   assert.equal(result.decisionLevel, "HIGH");
   assert.ok(hasFinding(result, "config-thresholds-range-invalid"));
@@ -286,4 +287,67 @@ test("25 CLI emits markdown when format markdown is selected", () => {
 
   const markdown = fs.readFileSync(outputPath, "utf8");
   assert.ok(markdown.includes("# Tag Escalation Result"));
+});
+
+test("26 computes DEVIATE decision for deviate threshold", () => {
+  const result = evaluateTagEscalation(
+    input([event("TAG_FCT", "medium", 3)]),
+    { ...baseConfig, conservativeRules: { ...baseConfig.conservativeRules, multiAxisMediumToHigh: 3 } }
+  );
+  assert.equal(result.summary.totalScore, 6);
+  assert.equal(result.summary.baseLevel, "DEVIATE");
+  assert.equal(result.decisionLevel, "DEVIATE");
+});
+
+test("27 DEVIATE is between MEDIUM and HIGH in rank", () => {
+  const noMultiAxis = { ...baseConfig, conservativeRules: { ...baseConfig.conservativeRules, multiAxisMediumToHigh: 4 } };
+  const resultMedium = evaluateTagEscalation(
+    input([event("TAG_SAF", "medium"), event("TAG_CTX", "medium")]),
+    noMultiAxis
+  );
+  const resultDeviate = evaluateTagEscalation(
+    input([event("TAG_FCT", "medium", 3)]),
+    noMultiAxis
+  );
+  const resultHigh = evaluateTagEscalation(
+    input([event("TAG_SAF", "high"), event("TAG_CTX", "high")]),
+    baseConfig
+  );
+  assert.equal(resultMedium.decisionLevel, "MEDIUM");
+  assert.equal(resultDeviate.decisionLevel, "DEVIATE");
+  assert.equal(resultHigh.decisionLevel, "HIGH");
+});
+
+test("28 conservative no-downgrade keeps DEVIATE from previous state", () => {
+  const result = evaluateTagEscalation(
+    input([event("TAG_FCT", "low")], { level: "DEVIATE", stableRounds: 0 }),
+    baseConfig
+  );
+  assert.equal(result.decisionLevel, "DEVIATE");
+  assert.equal(result.summary.nextStableRounds, 1);
+});
+
+test("29 transition from MEDIUM to DEVIATE on score increase", () => {
+  const result = evaluateTagEscalation(
+    input([event("TAG_FCT", "medium", 3)], { level: "MEDIUM", stableRounds: 0 }),
+    { ...baseConfig, conservativeRules: { ...baseConfig.conservativeRules, multiAxisMediumToHigh: 3 } }
+  );
+  assert.equal(result.decisionLevel, "DEVIATE");
+});
+
+test("30 transition from DEVIATE to HIGH on further escalation", () => {
+  const result = evaluateTagEscalation(
+    input([event("TAG_SAF", "high"), event("TAG_CTX", "high")], { level: "DEVIATE", stableRounds: 0 }),
+    baseConfig
+  );
+  assert.equal(result.decisionLevel, "HIGH");
+});
+
+test("31 invalid deviate threshold range triggers finding", () => {
+  const result = evaluateTagEscalation(input([event("TAG_FCT", "low")]), {
+    ...baseConfig,
+    thresholds: { medium: 4, deviate: 3, high: 8 }
+  });
+  assert.equal(result.decisionLevel, "HIGH");
+  assert.ok(hasFinding(result, "config-thresholds-range-invalid"));
 });
