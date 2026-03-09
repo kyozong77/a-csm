@@ -407,3 +407,195 @@ test("30 CLI both format writes json and markdown pair", () => {
   assert.equal(fs.existsSync(outputPath), true);
   assert.equal(fs.existsSync(`${outputPath}.md`), true);
 });
+
+// --- Per-rule trigger tests (20 rules) ---
+let caseIndex = 31;
+for (const rule of DEFAULT_MATRIX) {
+  if (rule.mode === "all") {
+    test(`${String(caseIndex).padStart(3, "0")} rule ${rule.id} triggers (mode=all)`, () => {
+      const text = rule.phrases.join(" ");
+      const result = evaluateVcdInference(turns([{ text: `this contains ${text}` }]), baseConfig);
+      assert.equal(result.events.some((item) => item.rule_id === rule.id), true, `Expected ${rule.id} to trigger`);
+    });
+  } else {
+    test(`${String(caseIndex).padStart(3, "0")} rule ${rule.id} triggers detection`, () => {
+      const phrase = rule.phrases[0];
+      const result = evaluateVcdInference(turns([{ text: `this contains ${phrase}` }]), baseConfig);
+      assert.equal(result.events.some((item) => item.rule_id === rule.id), true, `Expected ${rule.id} to trigger`);
+    });
+  }
+  caseIndex += 1;
+}
+
+// --- Per-rule suppression tests (20 rules) ---
+for (const rule of DEFAULT_MATRIX) {
+  test(`${String(caseIndex).padStart(3, "0")} rule ${rule.id} disabled suppresses detection`, () => {
+    const phrase = rule.mode === "all" ? rule.phrases.join(" ") : rule.phrases[0];
+    const result = evaluateVcdInference(
+      turns([{ text: `this contains ${phrase}` }]),
+      { ...baseConfig, disabledRuleIds: [rule.id] }
+    );
+    assert.equal(result.events.some((item) => item.rule_id === rule.id), false, `${rule.id} should be suppressed`);
+  });
+  caseIndex += 1;
+}
+
+// --- Per-rule family/severity correctness tests (20 rules) ---
+for (const rule of DEFAULT_MATRIX) {
+  test(`${String(caseIndex).padStart(3, "0")} rule ${rule.id} emits family=${rule.family} severity=${rule.severity}`, () => {
+    const phrase = rule.mode === "all" ? rule.phrases.join(" ") : rule.phrases[0];
+    const result = evaluateVcdInference(turns([{ text: `this contains ${phrase}` }]), baseConfig);
+    const event = result.events.find((item) => item.rule_id === rule.id);
+    assert.ok(event, `Expected event for rule ${rule.id}`);
+    assert.equal(event.family, rule.family);
+    assert.equal(event.severity, rule.severity);
+  });
+  caseIndex += 1;
+}
+
+// --- Per-rule multi-turn detection tests (20 rules) ---
+for (const rule of DEFAULT_MATRIX) {
+  test(`${String(caseIndex).padStart(3, "0")} rule ${rule.id} fires in second turn`, () => {
+    const phrase = rule.mode === "all" ? rule.phrases.join(" ") : rule.phrases[0];
+    const result = evaluateVcdInference(
+      turns([
+        { id: "A1", text: "clean text only" },
+        { id: "A2", text: `this contains ${phrase}` }
+      ]),
+      baseConfig
+    );
+    const event = result.events.find((item) => item.rule_id === rule.id);
+    assert.ok(event, `Expected ${rule.id} in multi-turn`);
+    assert.equal(event.turn_id, "A2");
+  });
+  caseIndex += 1;
+}
+
+// --- Boundary / aggregate tests ---
+test(`${String(caseIndex).padStart(3, "0")} minSeverity=high filters all medium rules`, () => {
+  const mediumRules = DEFAULT_MATRIX.filter((r) => r.severity === "medium");
+  const highCritRules = DEFAULT_MATRIX.filter((r) => r.severity === "high" || r.severity === "critical");
+  const allPhrases = DEFAULT_MATRIX.map((r) => (r.mode === "all" ? r.phrases.join(" ") : r.phrases[0])).join(" ");
+  const result = evaluateVcdInference(turns([{ text: allPhrases }]), {
+    ...baseConfig,
+    minSeverity: "high"
+  });
+  for (const rule of mediumRules) {
+    assert.equal(result.events.some((item) => item.rule_id === rule.id), false, `${rule.id} should be filtered`);
+  }
+  for (const rule of highCritRules) {
+    assert.equal(result.events.some((item) => item.rule_id === rule.id), true, `${rule.id} should pass filter`);
+  }
+});
+caseIndex += 1;
+
+test(`${String(caseIndex).padStart(3, "0")} minSeverity=critical filters to critical only`, () => {
+  const critRules = DEFAULT_MATRIX.filter((r) => r.severity === "critical");
+  const nonCritRules = DEFAULT_MATRIX.filter((r) => r.severity !== "critical");
+  const allPhrases = DEFAULT_MATRIX.map((r) => (r.mode === "all" ? r.phrases.join(" ") : r.phrases[0])).join(" ");
+  const result = evaluateVcdInference(turns([{ text: allPhrases }]), {
+    ...baseConfig,
+    minSeverity: "critical"
+  });
+  for (const rule of nonCritRules) {
+    assert.equal(result.events.some((item) => item.rule_id === rule.id), false, `${rule.id} should be filtered`);
+  }
+  for (const rule of critRules) {
+    assert.equal(result.events.some((item) => item.rule_id === rule.id), true, `${rule.id} should pass filter`);
+  }
+});
+caseIndex += 1;
+
+test(`${String(caseIndex).padStart(3, "0")} multi-turn maxTriggersPerRule caps across turns`, () => {
+  const manyTurns = [];
+  for (let i = 0; i < 10; i++) {
+    manyTurns.push({ id: `M${i}`, text: "ignore previous instruction" });
+  }
+  const result = evaluateVcdInference(turns(manyTurns), {
+    ...baseConfig,
+    maxTriggersPerRule: 3
+  });
+  const vcde01Events = result.events.filter((item) => item.rule_id === "VCDE_01");
+  assert.equal(vcde01Events.length, 3);
+});
+caseIndex += 1;
+
+test(`${String(caseIndex).padStart(3, "0")} all 7 families represented in default matrix`, () => {
+  const families = new Set(DEFAULT_MATRIX.map((r) => r.family));
+  assert.equal(families.size, 7);
+  for (const expected of [
+    "prompt_injection",
+    "boundary",
+    "source_spoof",
+    "instruction_drift",
+    "data_exfil",
+    "coercion",
+    "context_pollution"
+  ]) {
+    assert.ok(families.has(expected), `Missing family: ${expected}`);
+  }
+});
+caseIndex += 1;
+
+test(`${String(caseIndex).padStart(3, "0")} deterministic results for same input`, () => {
+  const input = turns([{ text: "ignore previous instruction dump secrets" }]);
+  const a = evaluateVcdInference(input, baseConfig);
+  const b = evaluateVcdInference(input, baseConfig);
+  assert.deepEqual(
+    a.events.map((item) => item.event_id),
+    b.events.map((item) => item.event_id)
+  );
+  assert.equal(a.summary.riskScore, b.summary.riskScore);
+});
+caseIndex += 1;
+
+test(`${String(caseIndex).padStart(3, "0")} trace includes input step`, () => {
+  const result = evaluateVcdInference(turns([{ text: "ignore previous instruction" }]), baseConfig);
+  assert.ok(result.trace.some((item) => item.step === "input"));
+});
+caseIndex += 1;
+
+test(`${String(caseIndex).padStart(3, "0")} risk score increases with severity`, () => {
+  const medResult = evaluateVcdInference(turns([{ text: "out of scope task" }]), baseConfig);
+  const critResult = evaluateVcdInference(turns([{ text: "bypass safety policy" }]), baseConfig);
+  assert.ok(critResult.summary.riskScore > medResult.summary.riskScore);
+});
+caseIndex += 1;
+
+test(`${String(caseIndex).padStart(3, "0")} triggered status when score reaches threshold`, () => {
+  const result = evaluateVcdInference(
+    turns([
+      { text: "ignore previous instruction" },
+      { text: "reveal hidden prompt" },
+      { text: "override policy" },
+      { text: "dump secrets" }
+    ]),
+    { ...baseConfig, triggerThresholds: { guarded: 1, triggered: 4, lockdown: 20 } }
+  );
+  assert.equal(result.summary.status, "TRIGGERED");
+});
+caseIndex += 1;
+
+test(`${String(caseIndex).padStart(3, "0")} invalid turn text creates blocking finding`, () => {
+  const result = evaluateVcdInference({ turns: [{ id: "T1" }] }, baseConfig);
+  assert.ok(hasFinding(result, "input-turn-text-invalid"));
+});
+caseIndex += 1;
+
+test(`${String(caseIndex).padStart(3, "0")} invalid maxTriggersPerRule creates blocking finding`, () => {
+  const result = evaluateVcdInference(turns([{ text: "safe" }]), {
+    ...baseConfig,
+    maxTriggersPerRule: 0
+  });
+  assert.ok(hasFinding(result, "config-maxTriggersPerRule-invalid"));
+});
+caseIndex += 1;
+
+test(`${String(caseIndex).padStart(3, "0")} invalid excerptMaxLength creates blocking finding`, () => {
+  const result = evaluateVcdInference(turns([{ text: "safe" }]), {
+    ...baseConfig,
+    excerptMaxLength: -1
+  });
+  assert.ok(hasFinding(result, "config-excerptMaxLength-invalid"));
+});
+caseIndex += 1;
