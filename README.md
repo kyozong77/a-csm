@@ -145,4 +145,4 @@ logs/             Pipeline output artifacts
 
 ## License
 
-Proprietary. All rights reserved.
+MIT — see [LICENSE](LICENSE) for details.
