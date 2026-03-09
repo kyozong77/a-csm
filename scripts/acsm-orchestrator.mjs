@@ -451,6 +451,71 @@ function toSchemaEventLog(unifiedEvents) {
     }));
 }
 
+function computeStabilityIndex(ledgerSummary, tagSummary) {
+  const totalEvents = Number(ledgerSummary?.totalEvents) || 0;
+  const resolvedRows = Number(ledgerSummary?.resolvedRows) || 0;
+  const escalatedRows = Number(ledgerSummary?.escalatedRows) || 0;
+  const nextStableRounds = Number(tagSummary?.nextStableRounds) || 0;
+
+  if (totalEvents === 0) {
+    return 1.0;
+  }
+
+  const resolvedRatio = resolvedRows / totalEvents;
+  const escalatedRatio = escalatedRows / totalEvents;
+  const stableBonus = Math.min(nextStableRounds / 3, 1) * 0.2;
+
+  const raw = resolvedRatio * 0.4 + (1 - escalatedRatio) * 0.4 + stableBonus;
+  return Math.round(Math.min(1, Math.max(0, raw)) * 1000) / 1000;
+}
+
+function computeConfidenceInterval(vcdSummary, unifiedEventCount, schemaSummary) {
+  const riskScore = Number(vcdSummary?.riskScore) || 0;
+  const triggerCount = Number(vcdSummary?.triggerCount) || 0;
+  const schemaDecision = schemaSummary?.decision;
+
+  const riskPenalty = Math.min(riskScore / 10, 1) * 0.5;
+  const coverageFactor = triggerCount > 0 || unifiedEventCount > 0 ? 0.3 : 0;
+  const schemaBonus = schemaDecision === "PASS" ? 0.2 : 0;
+
+  const raw = 1 - riskPenalty + coverageFactor + schemaBonus;
+  return Math.round(Math.min(1, Math.max(0, raw)) * 1000) / 1000;
+}
+
+function computeRiskStatus(psState, vcdStatus, tagLevel) {
+  const riskSignals = [];
+
+  if (psState === "ST_ALM") {
+    riskSignals.push(4);
+  } else if (psState === "ST_DEV") {
+    riskSignals.push(2);
+  } else {
+    riskSignals.push(0);
+  }
+
+  const vcdMap = { LOCKDOWN: 4, TRIGGERED: 3, GUARDED: 1, CLEAR: 0 };
+  riskSignals.push(vcdMap[vcdStatus] ?? 0);
+
+  const tagMap = { HIGH: 4, DEVIATE: 3, MEDIUM: 2, LOW: 0 };
+  riskSignals.push(tagMap[tagLevel] ?? 0);
+
+  const maxSignal = Math.max(...riskSignals);
+
+  if (maxSignal >= 4) {
+    return "CRITICAL";
+  }
+  if (maxSignal >= 3) {
+    return "HIGH";
+  }
+  if (maxSignal >= 2) {
+    return "MEDIUM";
+  }
+  if (maxSignal >= 1) {
+    return "LOW";
+  }
+  return "CLEAR";
+}
+
 function mergeReleaseGateInput(defaultInput, overrideInput) {
   if (!isObject(overrideInput)) {
     return defaultInput;
@@ -493,6 +558,8 @@ function countBlockingFromSummary(result) {
   }
   return 0;
 }
+
+export { computeStabilityIndex, computeConfidenceInterval, computeRiskStatus };
 
 export function runAcsmOrchestrator(rawInput = {}, rawConfig = {}) {
   const findings = [];
@@ -689,6 +756,10 @@ export function runAcsmOrchestrator(rawInput = {}, rawConfig = {}) {
 
   const decision = releaseGateResult.decision === "GO" && blockingFindings === 0 ? "GO" : "NO_GO";
 
+  const stabilityIndex = computeStabilityIndex(ledgerResult.summary, tagResult.summary);
+  const confidenceInterval = computeConfidenceInterval(vcdResult.summary, unifiedEvents.length, schemaResult.summary);
+  const riskStatus = computeRiskStatus(psResult.ps, vcdResult.summary.status, tagResult.decisionLevel);
+
   return {
     generatedAt: new Date().toISOString(),
     decision,
@@ -700,7 +771,10 @@ export function runAcsmOrchestrator(rawInput = {}, rawConfig = {}) {
       schemaDecision: schemaResult.summary?.decision,
       tagDecisionLevel: tagResult.decisionLevel,
       vcdStatus: vcdResult.summary.status,
-      blockingFindings
+      blockingFindings,
+      stabilityIndex,
+      confidenceInterval,
+      riskStatus
     },
     findings,
     trace,
