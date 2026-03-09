@@ -324,3 +324,99 @@ for (const rule of DEFAULT_RULES) {
   });
   caseIndex += 1;
 }
+
+for (const rule of DEFAULT_RULES) {
+  test(`${String(caseIndex).padStart(3, "0")} rule ${rule.id} emits correct axis=${rule.axis} severity=${rule.severity}`, () => {
+    const phrase = rule.phrases[0];
+    const result = runEventEngine(inputText(`this contains ${phrase}`), baseConfig);
+    const event = result.events.find((item) => item.ruleId === rule.id);
+    assert.ok(event, `Expected event for rule ${rule.id}`);
+    assert.equal(event.axis, rule.axis);
+    assert.equal(event.severity, rule.severity);
+  });
+  caseIndex += 1;
+}
+
+for (const rule of DEFAULT_RULES) {
+  test(`${String(caseIndex).padStart(3, "0")} rule ${rule.id} fires across turns`, () => {
+    const phrase = rule.phrases[0];
+    const result = runEventEngine(
+      inputTurns([
+        { id: "A1", text: "clean text" },
+        { id: "A2", text: `this contains ${phrase}` }
+      ]),
+      baseConfig
+    );
+    const event = result.events.find((item) => item.ruleId === rule.id);
+    assert.ok(event, `Expected event for rule ${rule.id} in multi-turn`);
+    assert.equal(event.turnId, "A2");
+  });
+  caseIndex += 1;
+}
+
+test(`${String(caseIndex).padStart(3, "0")} minSeverity=high filters out all low and medium rules`, () => {
+  const lowMedRules = DEFAULT_RULES.filter((r) => r.severity === "low" || r.severity === "medium");
+  const highCritRules = DEFAULT_RULES.filter((r) => r.severity === "high" || r.severity === "critical");
+  const allPhrases = DEFAULT_RULES.map((r) => r.phrases[0]).join(" ");
+  const result = runEventEngine(inputText(allPhrases), { ...baseConfig, minSeverity: "high" });
+  for (const rule of lowMedRules) {
+    assert.equal(result.events.some((item) => item.ruleId === rule.id), false, `${rule.id} should be filtered`);
+  }
+  for (const rule of highCritRules) {
+    assert.equal(result.events.some((item) => item.ruleId === rule.id), true, `${rule.id} should pass filter`);
+  }
+});
+caseIndex += 1;
+
+test(`${String(caseIndex).padStart(3, "0")} minSeverity=critical filters to critical only`, () => {
+  const critRules = DEFAULT_RULES.filter((r) => r.severity === "critical");
+  const nonCritRules = DEFAULT_RULES.filter((r) => r.severity !== "critical");
+  const allPhrases = DEFAULT_RULES.map((r) => r.phrases[0]).join(" ");
+  const result = runEventEngine(inputText(allPhrases), { ...baseConfig, minSeverity: "critical" });
+  for (const rule of nonCritRules) {
+    assert.equal(result.events.some((item) => item.ruleId === rule.id), false, `${rule.id} should be filtered`);
+  }
+  for (const rule of critRules) {
+    assert.equal(result.events.some((item) => item.ruleId === rule.id), true, `${rule.id} should pass`);
+  }
+});
+caseIndex += 1;
+
+test(`${String(caseIndex).padStart(3, "0")} excerpt is truncated to excerptMaxLength`, () => {
+  const longPrefix = "a".repeat(200);
+  const result = runEventEngine(
+    inputText(`${longPrefix} fabricated citation ${longPrefix}`),
+    { ...baseConfig, excerptMaxLength: 40 }
+  );
+  assert.ok(result.events.length > 0);
+  assert.ok(result.events[0].excerpt.length <= 40);
+});
+caseIndex += 1;
+
+test(`${String(caseIndex).padStart(3, "0")} multi-turn maxEventsPerRule caps across turns`, () => {
+  const turns = [];
+  for (let i = 0; i < 10; i++) {
+    turns.push({ id: `M${i}`, text: "fabricated citation" });
+  }
+  const result = runEventEngine(inputTurns(turns), { ...baseConfig, maxEventsPerRule: 3 });
+  const frEvents = result.events.filter((item) => item.ruleId === "FR_01");
+  assert.equal(frEvents.length, 3);
+});
+caseIndex += 1;
+
+test(`${String(caseIndex).padStart(3, "0")} all four axes appear in axisCounts for mixed input`, () => {
+  const result = runEventEngine(
+    inputTurns([
+      { id: "T1", text: "fabricated citation" },
+      { id: "T2", text: "context drift" },
+      { id: "T3", text: "violence instruction" },
+      { id: "T4", text: "crash loop" }
+    ]),
+    baseConfig
+  );
+  assert.equal(result.summary.axisCounts.FR >= 1, true);
+  assert.equal(result.summary.axisCounts.CA >= 1, true);
+  assert.equal(result.summary.axisCounts.SR >= 1, true);
+  assert.equal(result.summary.axisCounts.SA >= 1, true);
+});
+caseIndex += 1;

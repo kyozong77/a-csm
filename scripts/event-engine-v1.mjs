@@ -305,7 +305,7 @@ function extractExcerpt(text, startIndex, maxLength) {
   return piece;
 }
 
-function detectRuleInText(textLower, textOriginal, rule) {
+function detectRuleInText(textLower, textOriginal, rule, excerptMaxLength) {
   const matched = [];
 
   for (const phrase of rule.phrases) {
@@ -324,7 +324,7 @@ function detectRuleInText(textLower, textOriginal, rule) {
   const firstIndex = matched.length > 0 ? Math.min(...matched.map((item) => item.index)) : 0;
   return {
     matchedPhrases: matched.map((item) => item.phrase),
-    excerpt: extractExcerpt(textOriginal, firstIndex, 140),
+    excerpt: extractExcerpt(textOriginal, firstIndex, excerptMaxLength),
     firstIndex
   };
 }
@@ -364,7 +364,7 @@ export function runEventEngine(input = {}, rawConfig = {}) {
         continue;
       }
 
-      const detection = detectRuleInText(textLower, turn.text, rule);
+      const detection = detectRuleInText(textLower, turn.text, rule, config.excerptMaxLength);
       if (!detection) {
         continue;
       }
