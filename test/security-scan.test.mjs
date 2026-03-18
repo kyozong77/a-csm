@@ -9,9 +9,12 @@ import { fileURLToPath } from "node:url";
 import { scanTextForSecrets, scanWorkspace } from "../scripts/security-scan.mjs";
 
 const ROOT_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const GITLAB_PAT_SAMPLE = "glpat-" + "abcdefghijklmnopqrstuvwxyz012345";
+const GENERIC_API_KEY_SAMPLE = "api_key=" + "abcdefghijklmnop123456";
+const GENERIC_SECRET_SAMPLE = "secret=" + "abcdefghijklmnopqrstuvwxyz012345";
 
 test("01 detects GitLab PAT in text", () => {
-  const findings = scanTextForSecrets("token=glpat-abcdefghijklmnopqrstuvwxyz012345");
+  const findings = scanTextForSecrets(`token=${GITLAB_PAT_SAMPLE}`);
   assert.equal(findings.length > 0, true);
   assert.equal(findings.some((item) => item.ruleId === "gitlab-pat"), true);
 });
@@ -29,8 +32,8 @@ test("03 scanWorkspace ignores excluded directories", () => {
   fs.mkdirSync(logsDir, { recursive: true });
   fs.mkdirSync(srcDir, { recursive: true });
 
-  fs.writeFileSync(path.join(logsDir, "should-ignore.txt"), "token=glpat-abcdefghijklmnopqrstuvwxyz012345", "utf8");
-  fs.writeFileSync(path.join(srcDir, "scan-me.txt"), "api_key=abcdefghijklmnop123456", "utf8");
+  fs.writeFileSync(path.join(logsDir, "should-ignore.txt"), `token=${GITLAB_PAT_SAMPLE}`, "utf8");
+  fs.writeFileSync(path.join(srcDir, "scan-me.txt"), GENERIC_API_KEY_SAMPLE, "utf8");
 
   const findings = scanWorkspace(tmpDir);
   assert.equal(findings.length, 1);
@@ -39,7 +42,7 @@ test("03 scanWorkspace ignores excluded directories", () => {
 
 test("04 CLI exits 1 when finding exists", () => {
   const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), "security-scan-"));
-  fs.writeFileSync(path.join(tmpDir, "demo.txt"), "secret=abcdefghijklmnopqrstuvwxyz012345", "utf8");
+  fs.writeFileSync(path.join(tmpDir, "demo.txt"), GENERIC_SECRET_SAMPLE, "utf8");
 
   const cli = spawnSync(process.execPath, ["scripts/security-scan.mjs", tmpDir], {
     cwd: ROOT_DIR,
