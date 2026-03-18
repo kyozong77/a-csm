@@ -1,0 +1,59 @@
+{
+  "name": "a-csm",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A-CSM: AI Contextual Signal Matrix — deterministic Node.js pipeline for conversational AI safety risk assessment.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "author": {
+    "name": "ZON RZVN",
+    "email": "zon@rzvn.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kyozong77/A-CSM.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kyozong77/A-CSM/issues"
+  },
+  "homepage": "https://github.com/kyozong77/A-CSM",
+  "keywords": [
+    "ai-safety",
+    "conversational-ai",
+    "risk-assessment",
+    "hallucination-detection",
+    "multi-turn-dialogue",
+    "deterministic-pipeline",
+    "user-side-safety"
+  ],
+  "scripts": {
+    "lint:syntax": "node scripts/lint-syntax.mjs",
+    "test": "node --test",
+    "test:coverage": "node --test --experimental-test-coverage",
+    "test:dataset": "python3 pipeline/dataset_test_runner.py",
+    "audit:workspace": "node scripts/workspace-audit.mjs --output logs/workspace-audit.json",
+    "security:scan": "node scripts/security-scan.mjs",
+    "annotation:cli": "node scripts/annotation-workflow.mjs",
+    "validation:cli": "node scripts/validation-framework.mjs",
+    "validation:run": "node scripts/validation-runner.mjs",
+    "dashboard:cli": "node scripts/dashboard-cli.mjs",
+    "acsm:run": "node scripts/acsm-orchestrator.mjs",
+    "acsm:run:validated": "node scripts/acsm-validation-pipeline.mjs",
+    "acsm:run:release": "node scripts/acsm-validated-release.mjs",
+    "acsm:run:batch": "node scripts/acsm-batch-runner.mjs",
+    "acsm:run:200": "node scripts/acsm-batch-runner.mjs --input config/acsm-batch-input.200.sample.json --config config/acsm-orchestrator.json --output logs/acsm-batch-200-result.json --format both --max-cases 200",
+    "regression:check": "node scripts/regression-suite.mjs --baseline test/fixtures/regression/baseline.sample.json --candidate test/fixtures/regression/candidate.sample.json --output logs/regression-report.json --format both",
+    "tag:check": "node scripts/tag-escalation.mjs --input config/tag-policy-input.sample.json --config config/tag-policy.json --format both --output logs/tag-escalation-result.json",
+    "derive:ps": "node scripts/ps-sub-fe-core.mjs --input config/ps-sub-fe-input.sample.json --config config/ps-sub-fe-core.json --format both --output logs/ps-sub-fe-result.json",
+    "deid:check": "node scripts/deid-pipeline.mjs --input config/deid-input.sample.json --config config/deid-policy.json --format both --output logs/deid-result.json",
+    "input:check": "node scripts/input-contract.mjs",
+    "events:check": "node scripts/event-engine-v1.mjs --input config/event-engine-input.sample.json --config config/event-engine-v1.json --format both --output logs/event-engine-result.json",
+    "schema:check": "node scripts/schema-invariant-service.mjs --input config/schema-invariant-input.sample.json --config config/schema-invariant-service.json --output logs/schema-invariant-result.json --format both",
+    "ledger:check": "node scripts/ledger-repeat-engine.mjs --input config/ledger-repeat-input.sample.json --config config/ledger-repeat-engine.json --output logs/ledger-repeat-result.json --format both",
+    "vcd:check": "node scripts/vcd-inference.mjs --input config/vcd-input.sample.json --config config/vcd-inference.json --format both --output logs/vcd-inference-result.json",
+    "performance:baseline": "node scripts/performance-baseline.mjs --batch-input config/acsm-batch-input.200.generated.json --sample-size 100 --baseline test/baselines/performance.json --output logs/performance-baseline-report.json --enforce"
+  }
+}

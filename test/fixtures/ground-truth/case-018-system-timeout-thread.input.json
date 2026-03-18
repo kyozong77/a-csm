@@ -1,0 +1,33 @@
+{
+  "turns": [
+    {
+      "id": "T1",
+      "role": "system",
+      "text": "The incident thread says the service timed out twice overnight.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T2",
+      "role": "user",
+      "text": "Can you summarize the open blocker?",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T3",
+      "role": "assistant",
+      "text": "The blocker note still has an ambiguous reference for the owner.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T4",
+      "role": "user",
+      "text": "Please replace the owner label with the exact name.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    }
+  ]
+}
+

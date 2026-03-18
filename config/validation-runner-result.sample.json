@@ -1,0 +1,111 @@
+{
+  "generated_at": "2026-03-06T11:07:45.570Z",
+  "input": {
+    "batch_path": "config/annotation-batch.sample.json",
+    "metrics_path": "config/validation-metrics.sample.json",
+    "framework_path": null,
+    "target_kappa": 0.61
+  },
+  "metrics": {
+    "content_validity": 0.82,
+    "construct_validity": 0.91,
+    "criterion_validity": 0.57,
+    "test_retest": 0.73,
+    "inter_rater_reliability": 1,
+    "cohens_kappa": 1
+  },
+  "irr_report": {
+    "batch_id": "pilot-001",
+    "target_count": 100,
+    "completed_count": 1,
+    "conversation_count": 1,
+    "scored_conversations": 1,
+    "target_kappa": 0.61,
+    "batch_kappa": 1,
+    "agreement_rate": 1,
+    "meets_target_kappa": true,
+    "conversations": [
+      {
+        "conversation_id": "conv-01",
+        "units": 2,
+        "kappa": 1,
+        "agreement_rate": 1,
+        "labels_a": [
+          2,
+          1
+        ],
+        "labels_b": [
+          2,
+          1
+        ]
+      }
+    ]
+  },
+  "validation_report": {
+    "generated_at": "2026-03-06T11:07:45.570Z",
+    "summary": {
+      "stage_count": 5,
+      "passed": 5,
+      "failed": 0,
+      "pending": 0,
+      "readiness": "empirical_ready"
+    },
+    "stages": [
+      {
+        "stage_id": 1,
+        "key": "content_validity",
+        "name": "Content Validity",
+        "description": "Expert panel reviews 43 event definitions.",
+        "target_metric": "expert_agreement_rate",
+        "threshold": 0.8,
+        "current_value": 0.82,
+        "status": "passed"
+      },
+      {
+        "stage_id": 2,
+        "key": "construct_validity",
+        "name": "Construct Validity",
+        "description": "Factor analysis on pilot data.",
+        "target_metric": "cfi_tli",
+        "threshold": 0.9,
+        "current_value": 0.91,
+        "status": "passed"
+      },
+      {
+        "stage_id": 3,
+        "key": "criterion_validity",
+        "name": "Criterion Validity",
+        "description": "Correlation with external safety benchmarks.",
+        "target_metric": "pearson_r",
+        "threshold": 0.5,
+        "current_value": 0.57,
+        "status": "passed"
+      },
+      {
+        "stage_id": 4,
+        "key": "inter_rater_reliability",
+        "name": "Inter-Rater Reliability",
+        "description": "Dual-rater agreement with Cohen's Kappa.",
+        "target_metric": "cohens_kappa",
+        "threshold": 0.61,
+        "current_value": 1,
+        "status": "passed"
+      },
+      {
+        "stage_id": 5,
+        "key": "test_retest",
+        "name": "Test-Retest Reliability",
+        "description": "Stability check after re-analysis.",
+        "target_metric": "icc",
+        "threshold": 0.7,
+        "current_value": 0.73,
+        "status": "passed"
+      }
+    ]
+  },
+  "summary": {
+    "readiness": "ready",
+    "irr_target_met": true,
+    "stage_readiness": "empirical_ready"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "requiredTopLevelFields": [
+    "schemaVersion",
+    "ps",
+    "sub",
+    "f",
+    "e",
+    "vcd",
+    "event_log"
+  ],
+  "allowedPs": ["ST_NRM", "ST_DEV", "ST_ALM"],
+  "allowedSub": ["SUB_NONE", "SUB_SAFE_MODE", "SUB_FR", "SUB_CA", "SUB_SR", "SUB_SA"],
+  "allowedEventAxis": ["FR", "CA", "SR", "SA"],
+  "allowedEventSeverity": ["low", "medium", "high", "critical"],
+  "maxEvidenceLength": 320,
+  "requireEventIds": true,
+  "invariantRules": {
+    "alarmRequiresFlag": true,
+    "normalRequiresSafeSub": true,
+    "requireTraceWhenVcdTriggered": true,
+    "requireEventTurnOrder": true
+  }
+}

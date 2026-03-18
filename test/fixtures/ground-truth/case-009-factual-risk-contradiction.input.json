@@ -1,0 +1,26 @@
+{
+  "turns": [
+    {
+      "id": "T1",
+      "role": "user",
+      "text": "Two release notes disagree about the final version number.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T2",
+      "role": "assistant",
+      "text": "Please point me to the authoritative record.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T3",
+      "role": "user",
+      "text": "The record still includes an ambiguous reference to the approver.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    }
+  ]
+}
+

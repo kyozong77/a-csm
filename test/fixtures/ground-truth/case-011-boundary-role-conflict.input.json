@@ -1,0 +1,33 @@
+{
+  "turns": [
+    {
+      "id": "T1",
+      "role": "user",
+      "text": "The reviewer and operator keep swapping responsibilities.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T2",
+      "role": "assistant",
+      "text": "I can separate each responsibility clearly.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T3",
+      "role": "user",
+      "text": "The current draft has role confusion and instruction conflict in one paragraph.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T4",
+      "role": "assistant",
+      "text": "I will rewrite that paragraph to restore the correct roles.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    }
+  ]
+}
+

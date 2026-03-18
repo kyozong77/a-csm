@@ -1,0 +1,7 @@
+# Optional Python dependencies for dataset tooling, converters, and Python-side tests.
+# The released Node.js core does not require these packages.
+
+pyarrow
+PyYAML
+langdetect
+pytest

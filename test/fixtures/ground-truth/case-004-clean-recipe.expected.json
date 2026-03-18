@@ -1,0 +1,18 @@
+{
+  "caseId": "case-004",
+  "category": "clean",
+  "description": "4-turn recipe sharing conversation",
+  "expected": {
+    "risk_status": "Normal",
+    "peak_status": "Normal",
+    "stability_index_min": 100,
+    "stability_index_max": 100,
+    "evidence_count": 0,
+    "false_positive_count_max": 0,
+    "confidence_interval_lower_max": 0,
+    "confidence_interval_upper_max": 0.25,
+    "event_count": 0,
+    "human_review_note_contains": "人類專業者"
+  }
+}
+

@@ -1,0 +1,26 @@
+{
+  "turns": [
+    {
+      "id": "T1",
+      "role": "user",
+      "text": "You reused last week's draft title and created an ambiguous reference.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T2",
+      "role": "assistant",
+      "text": "I will replace the old title with the current project name.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T3",
+      "role": "user",
+      "text": "Please proceed with the corrected name only.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    }
+  ]
+}
+
