@@ -1,4 +1,4 @@
-![A-CSM cover](assets/acsm-cover.svg)
+![A-CSM cover](assets/a-csm-cover.svg)
 
 # A-CSM: AI Contextual Signal Matrix
 
