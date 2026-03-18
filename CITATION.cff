@@ -10,7 +10,7 @@ repository-code: "https://github.com/kyozong77/A-CSM"
 authors:
   - given-names: "ZON"
     family-names: "RZVN"
-    affiliation: "Independent Researcher"
+    affiliation: "Independent Researcher, Taiwan"
     country: "TW"
     orcid: "https://orcid.org/0009-0002-6597-7245"
 abstract: "Deterministic Node.js pipeline for conversational AI safety risk assessment across factual reliability, context alignment, user-side safety, and system accountability."

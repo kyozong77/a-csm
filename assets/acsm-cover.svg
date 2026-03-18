@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 800" role="img" aria-labelledby="title desc">
+  <title id="title">A-CSM cover</title>
+  <desc id="desc">A-CSM: AI Contextual Signal Matrix cover artwork for the public core release.</desc>
+  <rect width="1600" height="800" fill="#f4f1ed"/>
+  <text x="800" y="250" text-anchor="middle" font-family="Times New Roman, Georgia, serif" font-size="220" fill="#111111">A-CSM</text>
+  <text x="800" y="400" text-anchor="middle" font-family="Times New Roman, Georgia, serif" font-size="86" letter-spacing="1.5" fill="#111111">AI Contextual Signal Matrix</text>
+  <text x="800" y="540" text-anchor="middle" font-family="Times New Roman, Georgia, serif" font-size="34" font-style="italic" fill="#222222">Built upon the CXC-7, CXOD-7, USCH, USCI</text>
+  <text x="800" y="590" text-anchor="middle" font-family="Times New Roman, Georgia, serif" font-size="30" font-style="italic" fill="#222222">An Engineering Implementation of the Vaert Conversational Context Architecture</text>
+</svg>

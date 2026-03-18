@@ -1,6 +1,15 @@
+![A-CSM cover](assets/acsm-cover.svg)
+
 # A-CSM: AI Contextual Signal Matrix
 
-> Warning: this repository contains a **pre-empirical research instrument** and reference implementation for the public-core A-CSM v0.1.0 release. It accompanies the A-CSM technical report and public release dossier. It is intended for reproducible baseline validation, research review, and safety evaluation rehearsal. It is **not** production software.
+> Warning: this repository contains a **pre-empirical research instrument** and reference implementation for the public-core A-CSM v0.1.0 release. It is intended for reproducible baseline validation, research review, and safety evaluation rehearsal. It is **not** production software.
+
+[![RZVN](https://img.shields.io/badge/RZVN-rzvn.io-111111?logo=safari&logoColor=white)](https://rzvn.io)
+[![CXC-7 DOI](https://img.shields.io/badge/CXC--7-10.5281%2Fzenodo.18615646-0A7BBB?logo=doi&logoColor=white)](https://doi.org/10.5281/zenodo.18615646)
+[![CXOD-7 DOI](https://img.shields.io/badge/CXOD--7-10.5281%2Fzenodo.17403793-0A7BBB?logo=doi&logoColor=white)](https://doi.org/10.5281/zenodo.17403793)
+[![USCH DOI](https://img.shields.io/badge/USCH-10.2139%2Fssrn.6135732-0A7BBB?logo=doi&logoColor=white)](https://doi.org/10.2139/ssrn.6135732)
+[![USCI DOI](https://img.shields.io/badge/USCI-10.5281%2Fzenodo.18678458-0A7BBB?logo=doi&logoColor=white)](https://doi.org/10.5281/zenodo.18678458)
+[![Report DOI](https://img.shields.io/badge/Report%20DOI-10.5281%2Fzenodo.19097267-555555?logo=doi&logoColor=white)](https://doi.org/10.5281/zenodo.19097267)
 
 **A-CSM: AI Contextual Signal Matrix** is a deterministic Node.js pipeline for assessing conversational contextual risk across factual reliability, context alignment, user-side safety, and system accountability dimensions.
 
@@ -283,11 +292,15 @@ This repository is best read as an implementation artifact sitting downstream of
 }
 ```
 
+- Software citation metadata: [`CITATION.cff`](CITATION.cff)
+- Report DOI metadata: [`docs/report-metadata/CITATION.cff`](docs/report-metadata/CITATION.cff)
+- Report bibliography: [`docs/report-metadata/references.bib`](docs/report-metadata/references.bib)
+
 ## License
 
 Code, configuration, and executable repository contents are licensed under the MIT License. See [`LICENSE`](LICENSE).
 
-Technical report source files, PDFs, and report assets under [`docs/technical-report/`](docs/technical-report/) are licensed under CC BY-NC-ND 4.0. See [`docs/technical-report/LICENSE.md`](docs/technical-report/LICENSE.md).
+The technical report is handled as a separate record and is linked by DOI only. It is not bundled in this repository. Its report-level license is CC BY-NC-ND 4.0.
 
 Reserved technical report DOI: `10.5281/zenodo.19097267`  
 Current status: reserved for the report release record; the report record is not yet published.

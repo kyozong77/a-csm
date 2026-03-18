@@ -40,8 +40,8 @@ The package also includes the released support scripts required for batch execut
 - `config/` sample inputs and released configuration files
 - `test/` automated test suite and released fixtures
 - `docs/` runtime, validation, release, and limitations documentation
-- `docs/technical-report/` English and Traditional Chinese technical reports
 - `CITATION.cff`
+- `docs/report-metadata/` report DOI metadata and bibliography only
 - `LICENSE`
 - `.github/workflows/ci.yml`
 
@@ -57,6 +57,7 @@ The public core does not include:
 - internal semantic layers
 - confidential decision routing
 - runtime intervention systems
+- technical report source files, PDFs, and report assets
 
 ## Minimum Local Verification Path
 
