@@ -231,6 +231,8 @@ A-CSM separates validation into public, reproducible assets and private evaluati
   - de-identified real-world holdout sets kept outside any public repository
   - internal annotation batches and IRR working files
 
+Internal validation records also document a separate governance-restricted track based on de-identified human-conversation exports. Those materials are maintained outside the public repository and are not part of the public reproducibility package.
+
 Real-world dialogue archives remain private and require de-identification, stratified sampling, and documented consent / governance review before any publication.
 
 ## Positioning
@@ -242,6 +244,7 @@ A-CSM is not an output-only guardrail wrapper. It is a deterministic post-sessio
 - This tool does not provide medical or legal advice.
 - All risk assessments require final review by qualified human professionals.
 - The current public release remains pre-empirical. Synthetic validation is complete, and real-world validation remains planned.
+- A private de-identified human-conversation validation track exists in internal records, but its underlying materials and results are not published in this repository.
 
 A-CSM is a conversational safety risk assessment framework. It is **not** a medical diagnostic tool, psychological assessment tool, or legal compliance certification.
 

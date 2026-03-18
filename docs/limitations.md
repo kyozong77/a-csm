@@ -17,6 +17,7 @@ It exists to prevent over-claiming.
 - Synthetic validation is implemented and reproducible in the repository.
 - Ground-truth fixtures exist for deterministic regression and schema consistency checks.
 - Real-world validation planning exists, but the public evidence package is not yet complete.
+- Internal records document a separate de-identified human-conversation validation track, but that track is governance-restricted and remains outside the public release boundary.
 - No public benchmark comparison pack against adjacent tooling is currently shipped.
 
 ## Data Limits
