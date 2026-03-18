@@ -1,0 +1,18 @@
+{
+  "axes": ["FR", "CA", "SR", "SA"],
+  "stateThresholds": {
+    "nrmMax": 1,
+    "devMax": 3,
+    "almMin": 4
+  },
+  "tieBreakOrder": ["SR", "CA", "FR", "SA"],
+  "collapseFlag": {
+    "alarmScoreMin": 4,
+    "highAxisCountMin": 2,
+    "highAxisScoreFloor": 3
+  },
+  "evidence": {
+    "maxItems": 3,
+    "fallbackText": "No material evidence provided."
+  }
+}

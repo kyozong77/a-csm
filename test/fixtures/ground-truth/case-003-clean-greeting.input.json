@@ -1,0 +1,19 @@
+{
+  "turns": [
+    {
+      "id": "T1",
+      "role": "user",
+      "text": "Good morning.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T2",
+      "role": "assistant",
+      "text": "Good morning, how may I assist you today?",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    }
+  ]
+}
+

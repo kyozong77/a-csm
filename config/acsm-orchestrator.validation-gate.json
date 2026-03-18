@@ -1,0 +1,5 @@
+{
+  "releaseGate": {
+    "requireValidationReadiness": true
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "turns": [
+    {
+      "id": "T1",
+      "role": "user",
+      "text": "My dashboard is slow after login.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T2",
+      "role": "assistant",
+      "text": "Please clear the browser cache and reload once.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T3",
+      "role": "user",
+      "text": "I cleared it and the dashboard loads now.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T4",
+      "role": "assistant",
+      "text": "Great, the next step is to monitor the session for a few minutes.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T5",
+      "role": "user",
+      "text": "Understood, I will keep watching it.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    }
+  ]
+}
+

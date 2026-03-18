@@ -1,0 +1,40 @@
+{
+  "turns": [
+    {
+      "id": "T1",
+      "role": "user",
+      "text": "We have two deployment notes to compare.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T2",
+      "role": "assistant",
+      "text": "I can compare the notes if you label them clearly.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T3",
+      "role": "user",
+      "text": "The second reply still uses an ambiguous reference for the rollback owner.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T4",
+      "role": "assistant",
+      "text": "I will rename each owner explicitly.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T5",
+      "role": "user",
+      "text": "Thanks, that reduces confusion.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    }
+  ]
+}
+

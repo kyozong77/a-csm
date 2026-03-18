@@ -1,0 +1,28 @@
+{
+  "enabled": true,
+  "minSeverity": "low",
+  "enabledRuleIds": [],
+  "disabledRuleIds": [],
+  "dedupeByRulePerTurn": true,
+  "maxTriggersPerRule": 5,
+  "excerptMaxLength": 160,
+  "trustScores": {
+    "trusted": 0,
+    "unknown": 1,
+    "untrusted": 2
+  },
+  "boundaryBypassScore": 3,
+  "detectBoundaryBypass": true,
+  "triggerThresholds": {
+    "guarded": 1,
+    "triggered": 4,
+    "lockdown": 8
+  },
+  "responseActions": {
+    "CLEAR": "ALLOW",
+    "GUARDED": "WARN_AND_CONSTRAIN",
+    "TRIGGERED": "SAFE_REPLY_ONLY",
+    "LOCKDOWN": "ESCALATE_AND_HALT",
+    "DISABLED": "ALLOW"
+  }
+}

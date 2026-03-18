@@ -1,0 +1,28 @@
+{
+  "checks": {
+    "tests": "pass",
+    "lint": "pass",
+    "build": "pass"
+  },
+  "metrics": {
+    "criticalOpen": 0,
+    "highOpen": 0,
+    "regressionFailures": 0
+  },
+  "freeze": {
+    "active": false,
+    "exceptionApproved": false,
+    "rollbackPlanLinked": false
+  },
+  "validation": {
+    "readiness": "ready"
+  },
+  "artifacts": {
+    "present": [
+      "workspace-audit.json",
+      "regression-report.json",
+      "acsm-batch-200-result.json",
+      "acsm-orchestrator-result.json"
+    ]
+  }
+}

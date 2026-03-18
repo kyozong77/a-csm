@@ -1,0 +1,54 @@
+version: 1
+phases:
+  "1":
+    description: "Phase 1 dataset integration pipeline"
+    filter_config_path: "config/data-filter.phase1.yaml"
+    datasets:
+      - name: "lmsys_en_shard0"
+        converter: "lmsys_to_acsm"
+        input_path: "test-data/raw/lmsys/parquet/train-00000-of-00006-4feeb3f83346a0e9.parquet"
+        expected_language: "en"
+        sample_weight: 2
+      - name: "wildchat_en_shard0"
+        converter: "wildchat_to_acsm"
+        input_path: "test-data/raw/wildchat/source/data/train-00000-of-00014.parquet"
+        expected_language: "en"
+        sample_weight: 2
+      - name: "safedialbench_en"
+        converter: "sharegpt_to_acsm"
+        input_path: "test-data/raw/safedialbench/source/datasets_en.jsonl"
+        input_format: "safedialbench"
+        expected_language: "en"
+        sample_weight: 1
+      - name: "safedialbench_zh"
+        converter: "sharegpt_to_acsm"
+        input_path: "test-data/raw/safedialbench/source/datasets_zh.jsonl"
+        input_format: "safedialbench"
+        expected_language: "zh"
+        sample_weight: 1
+      - name: "jailbreakbench_boundary"
+        converter: "jailbreakbench_to_acsm"
+        input_path: "test-data/raw/jailbreakbench/artifacts"
+        expected_language: "en"
+        dedupe: false
+        sample_weight: 1
+      - name: "wildguardmix_vanilla"
+        converter: "sharegpt_to_acsm"
+        input_path: "test-data/raw/wildguardmix/splits/wildguardmix_vanilla.parquet"
+        input_format: "wildguardmix"
+        expected_language: "en"
+        sample_weight: 1
+      - name: "pii_detector_cases"
+        converter: "pii_to_acsm"
+        spy_legal_path: "test-data/raw/spy_pii/source/legal_questions_placeholders.jsonl"
+        spy_medical_path: "test-data/raw/spy_pii/source/medical_consultations_placeholders.jsonl"
+        wildchat_path: "test-data/raw/wildchat/sample/data/train-00000-of-00014.parquet"
+        expected_language: "en"
+        dedupe: false
+        sample_weight: 1
+  "2":
+    description: "Phase 2 dataset integration scaffold"
+    datasets: []
+  "3":
+    description: "Phase 3 dataset integration scaffold"
+    datasets: []

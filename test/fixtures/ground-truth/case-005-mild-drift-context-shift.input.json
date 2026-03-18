@@ -1,0 +1,33 @@
+{
+  "turns": [
+    {
+      "id": "T1",
+      "role": "user",
+      "text": "Please summarize the launch checklist.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T2",
+      "role": "assistant",
+      "text": "The checklist covers review, release, and rollback notes.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T3",
+      "role": "user",
+      "text": "That item now has an ambiguous reference in the note.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T4",
+      "role": "assistant",
+      "text": "I will restate the checklist with explicit labels.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    }
+  ]
+}
+

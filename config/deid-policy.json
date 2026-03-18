@@ -1,0 +1,19 @@
+{
+  "detectors": {
+    "email": true,
+    "phone": true,
+    "ipv4": true,
+    "twNationalId": true,
+    "creditCard": true,
+    "sensitiveQueryKeys": true
+  },
+  "replacement": {
+    "strategy": "indexed-token",
+    "fixedToken": "[REDACTED]",
+    "preserveEmailDomain": false,
+    "phoneMaskLastDigits": 2
+  },
+  "audit": {
+    "maxPerType": 100
+  }
+}

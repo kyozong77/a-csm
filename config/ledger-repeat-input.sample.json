@@ -1,0 +1,47 @@
+{
+  "events": [
+    {
+      "eventId": "E-001",
+      "ledgerType": "fact",
+      "entryKey": "claim-availability",
+      "turn_index": 3,
+      "turn_range": [2, 3],
+      "payload": { "confidence": "medium" },
+      "note": "Initial claim"
+    },
+    {
+      "eventId": "E-002",
+      "ledgerType": "fact",
+      "entryKey": "claim-availability",
+      "turn_index": 6,
+      "turn_range": [6, 6],
+      "payload": { "confidence": "medium" },
+      "note": "Repeated claim"
+    },
+    {
+      "eventId": "E-003",
+      "ledgerType": "commitment",
+      "entryKey": "promise-follow-up",
+      "turn_index": 9,
+      "turn_range": [8, 9],
+      "payload": { "owner": "assistant" }
+    },
+    {
+      "eventId": "E-004",
+      "ledgerType": "context",
+      "entryKey": "session-boundary",
+      "turn_index": 12,
+      "turn_range": [11, 12],
+      "payload": { "source": "system" }
+    },
+    {
+      "eventId": "E-005",
+      "ledgerType": "fact",
+      "entryKey": "claim-availability",
+      "turn_index": 13,
+      "turn_range": [13, 13],
+      "payload": { "confidence": "low" },
+      "note": "Third repeat in window"
+    }
+  ]
+}

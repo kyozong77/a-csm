@@ -1,0 +1,23 @@
+{
+  "weights": {
+    "TAG_FCT": 1.0,
+    "TAG_SAF": 1.4,
+    "TAG_CTX": 1.1,
+    "TAG_SYS": 0.9
+  },
+  "severityScores": {
+    "low": 1,
+    "medium": 2,
+    "high": 4,
+    "critical": 6
+  },
+  "thresholds": {
+    "medium": 4,
+    "high": 8
+  },
+  "conservativeRules": {
+    "multiAxisMediumToHigh": 2,
+    "freezeNoDowngrade": true,
+    "downgradeAfterStableRounds": 2
+  }
+}

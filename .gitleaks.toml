@@ -1,0 +1,7 @@
+title = "A-CSM gitleaks configuration"
+
+[[allowlists]]
+description = "Intentional secret-like fixtures used to test the local secret scanner."
+paths = [
+  '''test/security-scan\.test\.mjs'''
+]

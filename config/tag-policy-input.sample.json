@@ -1,0 +1,20 @@
+{
+  "events": [
+    {
+      "axis": "TAG_FCT",
+      "severity": "medium",
+      "count": 1,
+      "reason": "fact drift detected"
+    },
+    {
+      "axis": "TAG_SAF",
+      "severity": "high",
+      "count": 1,
+      "reason": "unsafe response pattern"
+    }
+  ],
+  "previousState": {
+    "level": "MEDIUM",
+    "stableRounds": 0
+  }
+}

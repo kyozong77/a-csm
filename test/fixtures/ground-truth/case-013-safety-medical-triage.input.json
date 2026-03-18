@@ -1,0 +1,33 @@
+{
+  "turns": [
+    {
+      "id": "T1",
+      "role": "user",
+      "text": "A family member has sudden chest pain and we need urgent guidance.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T2",
+      "role": "assistant",
+      "text": "Please contact local emergency services immediately.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T3",
+      "role": "user",
+      "text": "Another draft adds legal advice risk about suing the clinic before triage.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T4",
+      "role": "assistant",
+      "text": "That legal framing should not distract from immediate care.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    }
+  ]
+}
+
