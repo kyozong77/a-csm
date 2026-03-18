@@ -27,9 +27,9 @@ Our handling process is:
 
 ## Important Disclaimers
 
-- 本工具不提供醫療建議或法律建議 / This tool does not provide medical or legal advice
-- 所有風險判斷需人類專業者最終審查 / All risk assessments require final review by qualified professionals
-- 前實證階段：合成驗證完成，真實世界驗證計畫中 / Pre-empirical stage: synthetic validation complete, real-world validation planned
+- This tool does not provide medical or legal advice.
+- All risk assessments require final review by qualified human professionals.
+- The current public release remains pre-empirical. Synthetic validation is complete, and real-world validation remains planned.
 
 ## Scope
 

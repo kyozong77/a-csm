@@ -45,7 +45,7 @@ Examples:
 
 - First mention: `A-CSM: AI Contextual Signal Matrix`
 - Subsequent mention: `A-CSM`
-- Chinese formal name when needed: `AI 對話語境偵測系統 (A-CSM)`
+- Reserve the Traditional Chinese formal name for Chinese-language materials only.
 - Public-facing label: `v0.1.0`
 - Engineering version: `0.1.0`
 

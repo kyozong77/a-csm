@@ -3,7 +3,7 @@
 ## Release Identity
 
 - Project: `A-CSM: AI Contextual Signal Matrix`
-- Traditional Chinese formal name: `AI 對話語境偵測系統 (A-CSM)`
+- Reserve the Traditional Chinese formal name for Chinese-language materials only.
 - Public release label: `v0.1.0`
 - Release class: `public-core baseline`
 - Lead: `ZON RZVN`

@@ -6,8 +6,6 @@
 
 It detects conversational contextual risk after interaction artifacts are available, within the public-safe release boundary.
 
-繁體中文版正式名稱：**AI 對話語境偵測系統 (A-CSM)**
-
 > Read this first: this repository is the **public-safe GitHub release candidate** for A-CSM.  
 > It is intended for external sharing and reproducible baseline validation.  
 > It is **not** the confidential core, and it intentionally excludes private taxonomy, proprietary scoring logic, and confidential evaluation layers.
@@ -49,7 +47,6 @@ The repository includes executable scripts, 8 core orchestration stages, release
 
 - Official name: `A-CSM: AI Contextual Signal Matrix`
 - Short form: `A-CSM`
-- Traditional Chinese name: `AI 對話語境偵測系統 (A-CSM)`
 - Version: `0.1.0`
 - Repository: [github.com/kyozong77/A-CSM](https://github.com/kyozong77/A-CSM)
 - Project page: [rzvn.io/a-csm](https://rzvn.io/a-csm)
@@ -233,9 +230,9 @@ A-CSM is not an output-only guardrail wrapper. It is a deterministic post-sessio
 
 ## Disclaimers
 
-- 本工具不提供醫療建議或法律建議 / This tool does not provide medical or legal advice
-- 所有風險判斷需人類專業者最終審查 / All risk assessments require final review by qualified professionals
-- 前實證階段：合成驗證完成，真實世界驗證計畫中 / Pre-empirical stage: synthetic validation complete, real-world validation planned
+- This tool does not provide medical or legal advice.
+- All risk assessments require final review by qualified human professionals.
+- The current public release remains pre-empirical. Synthetic validation is complete, and real-world validation remains planned.
 
 A-CSM is a conversational safety risk assessment framework. It is **not** a medical diagnostic tool, psychological assessment tool, or legal compliance certification.
 

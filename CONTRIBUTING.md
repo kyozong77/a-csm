@@ -43,7 +43,7 @@ npm run validation:run -- --batch logs/annotation-batch.json --metrics config/va
 
 - Use the official first mention: `A-CSM: AI Contextual Signal Matrix`.
 - Use `A-CSM` after the first mention.
-- Use the Traditional Chinese formal name only in Chinese-facing materials: `AI 對話語境偵測系統 (A-CSM)`.
+- Reserve the Traditional Chinese formal name for Chinese-language materials only.
 - Keep any future public-facing documentation free of developer-specific absolute paths.
 
 ## Data Handling

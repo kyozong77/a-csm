@@ -8,7 +8,7 @@ This document defines the local-only preparation workflow that must pass before 
 
 - Official first mention: `A-CSM: AI Contextual Signal Matrix`
 - Short form: `A-CSM`
-- Traditional Chinese formal name: `AI 對話語境偵測系統 (A-CSM)`
+- Reserve the Traditional Chinese formal name for Chinese-language materials only.
 - Public-facing release label: `v0.1.0`
 - Engineering version: `0.1.0`
 
