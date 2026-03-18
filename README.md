@@ -1,5 +1,7 @@
 # A-CSM: AI Contextual Signal Matrix
 
+> Warning: this repository contains a **pre-empirical research instrument** and reference implementation for the public-core A-CSM v0.1.0 release. It accompanies the A-CSM technical report and public release dossier. It is intended for reproducible baseline validation, research review, and safety evaluation rehearsal. It is **not** production software.
+
 **A-CSM: AI Contextual Signal Matrix** is a deterministic Node.js pipeline for assessing conversational contextual risk across factual reliability, context alignment, user-side safety, and system accountability dimensions.
 
 It detects conversational contextual risk after interaction artifacts are available, within the public-safe release boundary.
