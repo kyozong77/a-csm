@@ -1,0 +1,11 @@
+services:
+  acsm:
+    build:
+      context: .
+    working_dir: /app
+    command: npm test
+    environment:
+      NODE_ENV: test
+    init: true
+    volumes:
+      - ./:/app

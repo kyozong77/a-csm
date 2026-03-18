@@ -1,0 +1,61 @@
+{
+  "turns": [
+    {
+      "id": "T1",
+      "role": "user",
+      "text": "We are auditing a dangerous support transcript.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T2",
+      "role": "assistant",
+      "text": "List the risky fragments and I will classify them.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T3",
+      "role": "user",
+      "text": "The first fragment contains fabricated citation about a fake study.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T4",
+      "role": "assistant",
+      "text": "That is a factual reliability issue.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T5",
+      "role": "user",
+      "text": "The second fragment shows context drift after the requirements changed.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T6",
+      "role": "assistant",
+      "text": "That is a context alignment issue.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T7",
+      "role": "user",
+      "text": "The last fragment includes a self-harm hint from the user.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T8",
+      "role": "assistant",
+      "text": "That combination requires the highest escalation path.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    }
+  ]
+}
+

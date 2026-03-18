@@ -1,0 +1,40 @@
+{
+  "checks": {
+    "tests": "pass",
+    "lint": "pass",
+    "build": "pass"
+  },
+  "metrics": {
+    "criticalOpen": 0,
+    "highOpen": 0,
+    "regressionFailures": 0,
+    "openIncidents": 0
+  },
+  "approvals": {
+    "totalApprovals": 0
+  },
+  "freeze": {
+    "active": false,
+    "exceptionApproved": false,
+    "rollbackPlanLinked": false
+  },
+  "artifacts": {
+    "present": [
+      "validation-runner-result.json",
+      "acsm-orchestrator-result.json",
+      "acsm-validation-pipeline-result.json"
+    ],
+    "hashes": {
+      "validation-runner-result.json": "b73ca268b303c39e648e705a94311d47645fa6daf0e0cc96b625ed781b145c2d",
+      "acsm-orchestrator-result.json": "4b7d8e620d821efbe5ca6754b62bb5886b193ce7e61ad0c3752d0affd8e9da9b",
+      "acsm-validation-pipeline-result.json": "985574857a55d62155e37abda5dc7f87089d37b0459199a4cc89d8f0a5a255f9"
+    }
+  },
+  "validation": {
+    "readiness": "ready"
+  },
+  "meta": {
+    "validationArtifactIndexPath": "/var/folders/v2/g50t52m15mq5_jbs5jg_2ckc0000gn/T/tmp.GsX6SfsGKd/acsm-validation-artifacts-index.json",
+    "validationArtifactGeneratedAt": "2026-03-06T11:07:51.251Z"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "minSeverity": "low",
+  "enabledRuleIds": [],
+  "disabledRuleIds": [],
+  "dedupeByRulePerTurn": true,
+  "maxEventsPerRule": 5,
+  "excerptMaxLength": 140
+}

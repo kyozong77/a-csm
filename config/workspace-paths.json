@@ -1,0 +1,20 @@
+{
+  "requiredPaths": [
+    "./README.md",
+    "./package.json",
+    "./LICENSE",
+    "./scripts",
+    "./config",
+    "./docs",
+    "./test"
+  ],
+  "referencePaths": [
+    "./SECURITY.md",
+    "./CONTRIBUTING.md",
+    "./CHANGELOG.md",
+    "./ROADMAP.md",
+    "./CITATION.cff",
+    "./.github/workflows/ci.yml"
+  ],
+  "note": "Workspace audit is repository-portable. Required paths define release-critical files; reference paths improve public release readiness but do not block local development."
+}

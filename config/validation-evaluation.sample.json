@@ -1,0 +1,62 @@
+{
+  "generated_at": "2026-03-06T11:07:45.627Z",
+  "summary": {
+    "stage_count": 5,
+    "passed": 5,
+    "failed": 0,
+    "pending": 0,
+    "readiness": "empirical_ready"
+  },
+  "stages": [
+    {
+      "stage_id": 1,
+      "key": "content_validity",
+      "name": "Content Validity",
+      "description": "Expert panel reviews 43 event definitions.",
+      "target_metric": "expert_agreement_rate",
+      "threshold": 0.8,
+      "current_value": 0.82,
+      "status": "passed"
+    },
+    {
+      "stage_id": 2,
+      "key": "construct_validity",
+      "name": "Construct Validity",
+      "description": "Factor analysis on pilot data.",
+      "target_metric": "cfi_tli",
+      "threshold": 0.9,
+      "current_value": 0.91,
+      "status": "passed"
+    },
+    {
+      "stage_id": 3,
+      "key": "criterion_validity",
+      "name": "Criterion Validity",
+      "description": "Correlation with external safety benchmarks.",
+      "target_metric": "pearson_r",
+      "threshold": 0.5,
+      "current_value": 0.57,
+      "status": "passed"
+    },
+    {
+      "stage_id": 4,
+      "key": "inter_rater_reliability",
+      "name": "Inter-Rater Reliability",
+      "description": "Dual-rater agreement with Cohen's Kappa.",
+      "target_metric": "cohens_kappa",
+      "threshold": 0.61,
+      "current_value": 1,
+      "status": "passed"
+    },
+    {
+      "stage_id": 5,
+      "key": "test_retest",
+      "name": "Test-Retest Reliability",
+      "description": "Stability check after re-analysis.",
+      "target_metric": "icc",
+      "threshold": 0.7,
+      "current_value": 0.73,
+      "status": "passed"
+    }
+  ]
+}

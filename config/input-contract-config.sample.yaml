@@ -1,0 +1,11 @@
+version: "1.0.1"
+analysis_mode: "full"
+output_mode: "internal_full"
+vcd_enabled: true
+tag_escalation_enabled: true
+repeat_detection_window: 5
+collapse_threshold:
+  ST_CC: true
+  ST_SC: true
+report_elements: 10
+sha256_hashing: true

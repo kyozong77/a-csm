@@ -1,0 +1,16 @@
+{
+  "cases": [
+    {
+      "id": "case-alpha",
+      "output": {
+        "status": "ok",
+        "score": 3,
+        "flags": ["stable", "verified"]
+      }
+    },
+    {
+      "id": "case-beta",
+      "output": "pass"
+    }
+  ]
+}

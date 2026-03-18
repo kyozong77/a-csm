@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1.0.0",
+  "ps": "ST_DEV",
+  "sub": "SUB_CA",
+  "f": false,
+  "e": "Evidence summary references Turn IDs and stable paraphrase.",
+  "vcd": {
+    "level": "V2",
+    "status": "MONITOR",
+    "trace": [
+      {
+        "step": "context-shift",
+        "message": "Detected context drift indicator."
+      }
+    ]
+  },
+  "event_log": [
+    {
+      "eventId": "CA_03@T7#1",
+      "axis": "CA",
+      "severity": "medium",
+      "turn_index": 7
+    },
+    {
+      "eventId": "SR_02@T9#1",
+      "axis": "SR",
+      "severity": "low",
+      "turn_index": 9
+    }
+  ]
+}

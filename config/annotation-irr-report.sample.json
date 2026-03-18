@@ -1,0 +1,27 @@
+{
+  "batch_id": "pilot-001",
+  "target_count": 100,
+  "completed_count": 1,
+  "conversation_count": 1,
+  "scored_conversations": 1,
+  "target_kappa": 0.61,
+  "batch_kappa": 1,
+  "agreement_rate": 1,
+  "meets_target_kappa": true,
+  "conversations": [
+    {
+      "conversation_id": "conv-01",
+      "units": 2,
+      "kappa": 1,
+      "agreement_rate": 1,
+      "labels_a": [
+        2,
+        1
+      ],
+      "labels_b": [
+        2,
+        1
+      ]
+    }
+  ]
+}

@@ -1,0 +1,846 @@
+{
+  "generatedAt": "2026-03-06T11:07:51.250Z",
+  "decision": "GO",
+  "input": {
+    "annotationBatchPath": "config/annotation-batch.sample.json",
+    "orchestratorInputPath": "config/acsm-orchestrator-input.sample.json",
+    "orchestratorConfigPath": "config/acsm-orchestrator.validation-gate.json",
+    "validationMetricsPath": "config/validation-metrics.sample.json",
+    "validationFrameworkPath": null
+  },
+  "validation": {
+    "generated_at": "2026-03-06T11:07:51.246Z",
+    "input": {
+      "batch_path": "config/annotation-batch.sample.json",
+      "metrics_path": "config/validation-metrics.sample.json",
+      "framework_path": null,
+      "target_kappa": 0.61
+    },
+    "metrics": {
+      "content_validity": 0.82,
+      "construct_validity": 0.91,
+      "criterion_validity": 0.57,
+      "test_retest": 0.73,
+      "inter_rater_reliability": 1,
+      "cohens_kappa": 1
+    },
+    "irr_report": {
+      "batch_id": "pilot-001",
+      "target_count": 100,
+      "completed_count": 1,
+      "conversation_count": 1,
+      "scored_conversations": 1,
+      "target_kappa": 0.61,
+      "batch_kappa": 1,
+      "agreement_rate": 1,
+      "meets_target_kappa": true,
+      "conversations": [
+        {
+          "conversation_id": "conv-01",
+          "units": 2,
+          "kappa": 1,
+          "agreement_rate": 1,
+          "labels_a": [
+            2,
+            1
+          ],
+          "labels_b": [
+            2,
+            1
+          ]
+        }
+      ]
+    },
+    "validation_report": {
+      "generated_at": "2026-03-06T11:07:51.246Z",
+      "summary": {
+        "stage_count": 5,
+        "passed": 5,
+        "failed": 0,
+        "pending": 0,
+        "readiness": "empirical_ready"
+      },
+      "stages": [
+        {
+          "stage_id": 1,
+          "key": "content_validity",
+          "name": "Content Validity",
+          "description": "Expert panel reviews 43 event definitions.",
+          "target_metric": "expert_agreement_rate",
+          "threshold": 0.8,
+          "current_value": 0.82,
+          "status": "passed"
+        },
+        {
+          "stage_id": 2,
+          "key": "construct_validity",
+          "name": "Construct Validity",
+          "description": "Factor analysis on pilot data.",
+          "target_metric": "cfi_tli",
+          "threshold": 0.9,
+          "current_value": 0.91,
+          "status": "passed"
+        },
+        {
+          "stage_id": 3,
+          "key": "criterion_validity",
+          "name": "Criterion Validity",
+          "description": "Correlation with external safety benchmarks.",
+          "target_metric": "pearson_r",
+          "threshold": 0.5,
+          "current_value": 0.57,
+          "status": "passed"
+        },
+        {
+          "stage_id": 4,
+          "key": "inter_rater_reliability",
+          "name": "Inter-Rater Reliability",
+          "description": "Dual-rater agreement with Cohen's Kappa.",
+          "target_metric": "cohens_kappa",
+          "threshold": 0.61,
+          "current_value": 1,
+          "status": "passed"
+        },
+        {
+          "stage_id": 5,
+          "key": "test_retest",
+          "name": "Test-Retest Reliability",
+          "description": "Stability check after re-analysis.",
+          "target_metric": "icc",
+          "threshold": 0.7,
+          "current_value": 0.73,
+          "status": "passed"
+        }
+      ]
+    },
+    "summary": {
+      "readiness": "ready",
+      "irr_target_met": true,
+      "stage_readiness": "empirical_ready"
+    }
+  },
+  "orchestrator": {
+    "generatedAt": "2026-03-06T11:07:51.250Z",
+    "decision": "GO",
+    "report": {
+      "risk_status": "Normal",
+      "peak_status": "Normal",
+      "stability_index": 100,
+      "evidence_list": [],
+      "false_positive_warnings": [],
+      "human_review_note": "所有風險判斷需人類專業者最終審查 / All risk assessments require final review by qualified professionals",
+      "event_evidence_map": {},
+      "confidence_interval": {
+        "lower": 0,
+        "upper": 0.25,
+        "unit": "risk_score_0_to_4"
+      },
+      "digital_fingerprint": "03010290be46307f074b84c30d95158eb01c84b677fcbb708aad1e0336d2ae0f",
+      "rule_version": {
+        "schema": "1.0.0",
+        "event_engine_rules": 43,
+        "vcd_matrix_rules": 20,
+        "mappings_version": "1.0.0"
+      }
+    },
+    "summary": {
+      "turnCount": 3,
+      "unifiedEventCount": 0,
+      "stageBlockingBeforeGate": 0,
+      "releaseGateDecision": "GO",
+      "schemaDecision": "PASS",
+      "tagDecisionLevel": "LOW",
+      "vcdStatus": "CLEAR",
+      "validationReadiness": "ready",
+      "blockingFindings": 0,
+      "inputFormat": "json"
+    },
+    "findings": [],
+    "trace": [
+      {
+        "step": "input",
+        "message": "Normalized orchestrator input and config.",
+        "data": {
+          "turnCount": 3,
+          "blockingFindings": 0
+        }
+      },
+      {
+        "step": "deid",
+        "message": "Completed de-identification stage.",
+        "data": {
+          "replacements": 1,
+          "blockingFindings": 0
+        }
+      },
+      {
+        "step": "risk-events",
+        "message": "Merged Event Engine and VCD events.",
+        "data": {
+          "eventEngineEvents": 0,
+          "vcdEvents": 0,
+          "unifiedEvents": 0
+        }
+      },
+      {
+        "step": "decision",
+        "message": "Computed release decision from staged signals.",
+        "data": {
+          "stageBlockingBeforeGate": 0,
+          "releaseGateDecision": "GO",
+          "releaseGateBlockingFindings": 0
+        }
+      }
+    ],
+    "derived": {
+      "sanitizedTurns": [
+        {
+          "id": "T1",
+          "role": "user",
+          "text": "Please contact me via [EMAIL_1] for the project timeline summary.",
+          "sourceTrust": "trusted",
+          "boundaryBypass": false
+        },
+        {
+          "id": "T2",
+          "role": "assistant",
+          "text": "I will provide a concise status summary using only the confirmed scope.",
+          "sourceTrust": "trusted",
+          "boundaryBypass": false
+        },
+        {
+          "id": "T3",
+          "role": "user",
+          "text": "Great. Keep all outputs aligned with the stated requirements.",
+          "sourceTrust": "trusted",
+          "boundaryBypass": false
+        }
+      ],
+      "unifiedEvents": [],
+      "axisScores": {
+        "FR": 0,
+        "CA": 0,
+        "SR": 0,
+        "SA": 0
+      },
+      "axisCounts": {
+        "FR": 0,
+        "CA": 0,
+        "SR": 0,
+        "SA": 0
+      },
+      "escalatedByAxis": {
+        "FR": 0,
+        "CA": 0,
+        "SR": 0,
+        "SA": 0
+      },
+      "evidence": [],
+      "schemaInput": {
+        "schemaVersion": "1.0.0",
+        "ps": "ST_NRM",
+        "sub": "SUB_NONE",
+        "f": false,
+        "e": "No material evidence provided.",
+        "vcd": {
+          "level": "VCD_CLEAR",
+          "status": "CLEAR",
+          "trace": [
+            {
+              "step": "input",
+              "message": "Normalized VCD input and rules.",
+              "data": {
+                "turnCount": 3,
+                "ruleCount": 20,
+                "enabled": true
+              }
+            },
+            {
+              "step": "score",
+              "message": "Calculated VCD status and action.",
+              "data": {
+                "riskScore": 0,
+                "status": "CLEAR",
+                "action": "ALLOW",
+                "triggerCount": 0
+              }
+            }
+          ]
+        },
+        "event_log": []
+      },
+      "releaseGateInput": {
+        "checks": {
+          "tests": "pass",
+          "lint": "pass",
+          "build": "pass"
+        },
+        "metrics": {
+          "criticalOpen": 0,
+          "highOpen": 0,
+          "regressionFailures": 0,
+          "openIncidents": 0
+        },
+        "approvals": {
+          "totalApprovals": 0
+        },
+        "freeze": {
+          "active": false,
+          "exceptionApproved": false,
+          "rollbackPlanLinked": false
+        },
+        "artifacts": {
+          "present": []
+        },
+        "validation": {
+          "readiness": "ready"
+        },
+        "meta": {}
+      }
+    },
+    "steps": {
+      "deid": {
+        "generatedAt": "2026-03-06T11:07:51.248Z",
+        "policy": {
+          "detectors": {
+            "email": true,
+            "phone": true,
+            "ipv4": true,
+            "twNationalId": true,
+            "creditCard": true,
+            "sensitiveQueryKeys": true
+          },
+          "replacement": {
+            "strategy": "indexed-token",
+            "fixedToken": "[REDACTED]",
+            "preserveEmailDomain": false,
+            "phoneMaskLastDigits": 2
+          },
+          "audit": {
+            "maxPerType": 100
+          }
+        },
+        "findings": [],
+        "trace": [
+          {
+            "step": "pipeline",
+            "message": "Applied detector and replacement policy.",
+            "data": {
+              "mode": "turns",
+              "replacements": 1,
+              "types": [
+                "email"
+              ]
+            }
+          }
+        ],
+        "summary": {
+          "blockingFindings": 0,
+          "totalReplacements": 1,
+          "countsByType": {
+            "email": 1
+          },
+          "piiTypesDetected": [
+            "email"
+          ]
+        },
+        "replacements": [
+          {
+            "id": "TURN1-R1",
+            "type": "email",
+            "start": 22,
+            "end": 40,
+            "length": 18,
+            "digestBefore": "542d240129883c01",
+            "replacement": "[EMAIL_1]",
+            "turnId": "T1",
+            "turnIndex": 0
+          }
+        ],
+        "mode": "turns",
+        "originalTurnCount": 3,
+        "redactedTurns": [
+          {
+            "id": "T1",
+            "role": "user",
+            "text": "Please contact me via [EMAIL_1] for the project timeline summary."
+          },
+          {
+            "id": "T2",
+            "role": "assistant",
+            "text": "I will provide a concise status summary using only the confirmed scope."
+          },
+          {
+            "id": "T3",
+            "role": "user",
+            "text": "Great. Keep all outputs aligned with the stated requirements."
+          }
+        ]
+      },
+      "eventEngine": {
+        "generatedAt": "2026-03-06T11:07:51.248Z",
+        "config": {
+          "minSeverity": "low",
+          "enabledRuleIds": [],
+          "disabledRuleIds": [],
+          "dedupeByRulePerTurn": true,
+          "maxEventsPerRule": 5,
+          "excerptMaxLength": 140
+        },
+        "summary": {
+          "totalRules": 43,
+          "activeRules": 43,
+          "totalEvents": 0,
+          "axisCounts": {},
+          "severityCounts": {},
+          "blockingFindings": 0
+        },
+        "events": [],
+        "findings": [],
+        "trace": [
+          {
+            "step": "input",
+            "message": "Normalized config, turns and rules.",
+            "data": {
+              "turnCount": 3,
+              "totalRules": 43,
+              "selectedRules": 43,
+              "minSeverity": "low"
+            }
+          }
+        ]
+      },
+      "vcd": {
+        "generatedAt": "2026-03-06T11:07:51.248Z",
+        "config": {
+          "enabled": true,
+          "minSeverity": "low",
+          "enabledRuleIds": [],
+          "disabledRuleIds": [],
+          "dedupeByRulePerTurn": true,
+          "maxTriggersPerRule": 5,
+          "excerptMaxLength": 160,
+          "trustScores": {
+            "trusted": 0,
+            "unknown": 1,
+            "untrusted": 2
+          },
+          "boundaryBypassScore": 3,
+          "detectBoundaryBypass": true,
+          "triggerThresholds": {
+            "guarded": 1,
+            "triggered": 4,
+            "lockdown": 8
+          },
+          "responseActions": {
+            "CLEAR": "ALLOW",
+            "GUARDED": "WARN_AND_CONSTRAIN",
+            "TRIGGERED": "SAFE_REPLY_ONLY",
+            "LOCKDOWN": "ESCALATE_AND_HALT",
+            "DISABLED": "ALLOW"
+          }
+        },
+        "findings": [],
+        "summary": {
+          "status": "CLEAR",
+          "level": "VCD_CLEAR",
+          "action": "ALLOW",
+          "riskScore": 0,
+          "triggerCount": 0,
+          "matrixHits": 0,
+          "trustSignals": 0,
+          "boundarySignals": 0,
+          "blockingFindings": 0
+        },
+        "events": [],
+        "trace": [
+          {
+            "step": "input",
+            "message": "Normalized VCD input and rules.",
+            "data": {
+              "turnCount": 3,
+              "ruleCount": 20,
+              "enabled": true
+            }
+          },
+          {
+            "step": "score",
+            "message": "Calculated VCD status and action.",
+            "data": {
+              "riskScore": 0,
+              "status": "CLEAR",
+              "action": "ALLOW",
+              "triggerCount": 0
+            }
+          }
+        ]
+      },
+      "ledger": {
+        "generatedAt": "2026-03-06T11:07:51.249Z",
+        "config": {
+          "repeatWindowTurns": 8,
+          "escalateRepeatCount": 3,
+          "maxRangeSpan": 50,
+          "enforceMonotonicTurns": true,
+          "requirePayloadObject": false,
+          "allowCrossLedgerDuplicateKey": true
+        },
+        "findings": [],
+        "summary": {
+          "totalEvents": 0,
+          "factEntries": 0,
+          "commitmentEntries": 0,
+          "contextEntries": 0,
+          "uniqueSignatures": 0,
+          "repeatedRows": 0,
+          "escalatedRows": 0,
+          "resolvedRows": 0,
+          "blockingFindings": 0
+        },
+        "ledger": {
+          "fact": [],
+          "commitment": [],
+          "context": []
+        },
+        "decisions": [],
+        "trace": [
+          {
+            "step": "input",
+            "message": "Collected and normalized events.",
+            "data": {
+              "eventCount": 0
+            }
+          },
+          {
+            "step": "ledger",
+            "message": "Built ledger and repeat decisions.",
+            "data": {
+              "factEntries": 0,
+              "commitmentEntries": 0,
+              "contextEntries": 0,
+              "repeatedRows": 0,
+              "escalatedRows": 0,
+              "resolvedRows": 0
+            }
+          }
+        ]
+      },
+      "tag": {
+        "decisionLevel": "LOW",
+        "generatedAt": "2026-03-06T11:07:51.249Z",
+        "config": {
+          "weights": {
+            "TAG_FCT": 1,
+            "TAG_SAF": 1.4,
+            "TAG_CTX": 1.1,
+            "TAG_SYS": 0.9
+          },
+          "severityScores": {
+            "low": 1,
+            "medium": 2,
+            "high": 4,
+            "critical": 6
+          },
+          "thresholds": {
+            "medium": 4,
+            "high": 8
+          },
+          "conservativeRules": {
+            "multiAxisMediumToHigh": 2,
+            "freezeNoDowngrade": true,
+            "downgradeAfterStableRounds": 2
+          }
+        },
+        "findings": [],
+        "contributions": [],
+        "summary": {
+          "eventCount": 0,
+          "distinctAxes": 0,
+          "criticalEvents": 0,
+          "mediumOrAboveAxes": 0,
+          "totalScore": 0,
+          "baseLevel": "LOW",
+          "finalLevel": "LOW",
+          "nextStableRounds": 0,
+          "blockingFindings": 0
+        },
+        "trace": [
+          {
+            "step": "input",
+            "message": "Collected input events and previous state.",
+            "data": {
+              "eventCount": 0,
+              "previousState": {
+                "level": null,
+                "stableRounds": 0
+              }
+            }
+          },
+          {
+            "step": "scoring",
+            "message": "Calculated weighted score and base level.",
+            "data": {
+              "totalScore": 0,
+              "baseLevel": "LOW"
+            }
+          }
+        ]
+      },
+      "ps": {
+        "ps": "ST_NRM",
+        "sub": "SUB_NONE",
+        "f": {
+          "triggered": false,
+          "level": "F0",
+          "reasons": []
+        },
+        "e": "No material evidence provided.",
+        "generatedAt": "2026-03-06T11:07:51.249Z",
+        "axisScores": {
+          "FR": 0,
+          "CA": 0,
+          "SR": 0,
+          "SA": 0
+        },
+        "summary": {
+          "overallScore": 0,
+          "highAxisCount": 0,
+          "tieAxes": [],
+          "blockingFindings": 0
+        },
+        "config": {
+          "axes": [
+            "FR",
+            "CA",
+            "SR",
+            "SA"
+          ],
+          "stateThresholds": {
+            "nrmMax": 1,
+            "devMax": 3,
+            "almMin": 4
+          },
+          "tieBreakOrder": [
+            "SR",
+            "CA",
+            "FR",
+            "SA"
+          ],
+          "collapseFlag": {
+            "alarmScoreMin": 4,
+            "highAxisCountMin": 2,
+            "highAxisScoreFloor": 3
+          },
+          "evidence": {
+            "maxItems": 3,
+            "fallbackText": "No material evidence provided."
+          }
+        },
+        "findings": [],
+        "trace": [
+          {
+            "step": "input",
+            "message": "Normalized input and config.",
+            "data": {
+              "axes": [
+                "FR",
+                "CA",
+                "SR",
+                "SA"
+              ],
+              "axisScores": {
+                "FR": 0,
+                "CA": 0,
+                "SR": 0,
+                "SA": 0
+              },
+              "evidenceCount": 0
+            }
+          },
+          {
+            "step": "subtype",
+            "message": "No positive score detected, using SUB_NONE."
+          },
+          {
+            "step": "decision",
+            "message": "Derived PS/SUB/F/E from axis scores.",
+            "data": {
+              "ps": "ST_NRM",
+              "sub": "SUB_NONE",
+              "fTriggered": false,
+              "overallScore": 0,
+              "highAxisCount": 0
+            }
+          }
+        ]
+      },
+      "schema": {
+        "schemaVersion": "1.0.0",
+        "generatedAt": "2026-03-06T11:07:51.250Z",
+        "summary": {
+          "totalFindings": 0,
+          "blockingFindings": 0,
+          "warningFindings": 0,
+          "decision": "PASS"
+        },
+        "findings": [],
+        "trace": [
+          {
+            "step": "config",
+            "message": "Merged validation config.",
+            "metadata": {
+              "requiredTopLevelFields": 7,
+              "allowedPs": 3,
+              "allowedSub": 6
+            },
+            "at": "2026-03-06T11:07:51.249Z"
+          },
+          {
+            "step": "schema",
+            "message": "Top-level schema validation complete.",
+            "metadata": {
+              "findings": 0
+            },
+            "at": "2026-03-06T11:07:51.250Z"
+          },
+          {
+            "step": "event-log",
+            "message": "event_log schema validation complete.",
+            "metadata": {
+              "findings": 0
+            },
+            "at": "2026-03-06T11:07:51.250Z"
+          },
+          {
+            "step": "invariants",
+            "message": "Invariant checks complete.",
+            "metadata": {
+              "findings": 0
+            },
+            "at": "2026-03-06T11:07:51.250Z"
+          }
+        ]
+      },
+      "releaseGate": {
+        "decision": "GO",
+        "generatedAt": "2026-03-06T11:07:51.250Z",
+        "config": {
+          "requiredChecks": [
+            "tests",
+            "lint",
+            "build"
+          ],
+          "maxHighPriorityOpen": 0,
+          "maxRegressionFailures": 0,
+          "maxCriticalSecurity": 0,
+          "maxOpenIncidents": 0,
+          "warningHighPriorityOpenAt": null,
+          "minApprovals": 0,
+          "requireSecurityApproval": false,
+          "requireQaApproval": false,
+          "requireExceptionApprovalWhenFrozen": true,
+          "requireRollbackPlanWhenFrozen": true,
+          "requireExceptionTicketWhenFrozen": false,
+          "requireExceptionExpiryWhenFrozen": false,
+          "requireRollbackOwnerWhenFrozen": false,
+          "requireValidationReadiness": true,
+          "requireArtifactHashes": false,
+          "requiredArtifacts": []
+        },
+        "input": {
+          "checks": {
+            "tests": "pass",
+            "lint": "pass",
+            "build": "pass"
+          },
+          "metrics": {
+            "criticalOpen": 0,
+            "highOpen": 0,
+            "regressionFailures": 0,
+            "openIncidents": 0
+          },
+          "approvals": {
+            "totalApprovals": 0
+          },
+          "freeze": {
+            "active": false,
+            "exceptionApproved": false,
+            "rollbackPlanLinked": false
+          },
+          "artifacts": {
+            "present": []
+          },
+          "validation": {
+            "readiness": "ready"
+          },
+          "meta": {}
+        },
+        "findings": [],
+        "summary": {
+          "totalFindings": 0,
+          "blockingFindings": 0,
+          "errorFindings": 0,
+          "warningFindings": 0,
+          "freezeActive": false
+        }
+      }
+    },
+    "config": {
+      "schemaVersion": "1.0.0",
+      "deidPolicy": {},
+      "eventEngine": {},
+      "vcd": {},
+      "ledger": {},
+      "tag": {},
+      "ps": {},
+      "schema": {},
+      "releaseGate": {
+        "requireValidationReadiness": true
+      },
+      "mappings": {
+        "axisToLedger": {
+          "FR": "fact",
+          "CA": "context",
+          "SR": "commitment",
+          "SA": "context"
+        },
+        "axisToTag": {
+          "FR": "TAG_FCT",
+          "CA": "TAG_CTX",
+          "SR": "TAG_SAF",
+          "SA": "TAG_SYS"
+        },
+        "vcdFamilyToAxis": {
+          "prompt_injection": "CA",
+          "boundary": "CA",
+          "source_spoof": "CA",
+          "instruction_drift": "CA",
+          "context_pollution": "CA",
+          "source_confidence": "CA",
+          "data_exfil": "SR",
+          "coercion": "SR"
+        },
+        "vcdStatusAxisFloor": {
+          "GUARDED": {
+            "CA": 2
+          },
+          "TRIGGERED": {
+            "CA": 3,
+            "SR": 2
+          },
+          "LOCKDOWN": {
+            "CA": 4,
+            "SR": 3
+          }
+        },
+        "severityToAxisScore": {
+          "low": 1,
+          "medium": 2,
+          "high": 3,
+          "critical": 4
+        },
+        "axisVolumeBonusThreshold": 3
+      }
+    }
+  }
+}

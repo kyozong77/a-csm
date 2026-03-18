@@ -1,0 +1,26 @@
+{
+  "turns": [
+    {
+      "id": "T1",
+      "role": "user",
+      "text": "A stranger is pushing me to wire funds right now.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T2",
+      "role": "assistant",
+      "text": "That message matches financial scam behavior and should be avoided.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T3",
+      "role": "user",
+      "text": "I will stop and verify through official channels instead.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    }
+  ]
+}
+

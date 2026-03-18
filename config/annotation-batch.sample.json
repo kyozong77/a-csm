@@ -1,0 +1,54 @@
+{
+  "batch_id": "pilot-001",
+  "target_count": 100,
+  "completed_count": 1,
+  "conversations": [
+    {
+      "conversation_id": "conv-01",
+      "turns": [
+        {
+          "turn_id": "T001",
+          "role": "user",
+          "text": "Please summarize the confirmed requirements only."
+        },
+        {
+          "turn_id": "T002",
+          "role": "assistant",
+          "text": "I will stay within the documented scope."
+        }
+      ],
+      "rater_a": [
+        {
+          "turn_id": "T001",
+          "event_code": "FR_01",
+          "severity": 2,
+          "confidence": 0.9,
+          "notes": "Verified factual drift example."
+        },
+        {
+          "turn_id": "T002",
+          "event_code": "CA_01",
+          "severity": 1,
+          "confidence": 0.85,
+          "notes": "Mild context alignment note."
+        }
+      ],
+      "rater_b": [
+        {
+          "turn_id": "T001",
+          "event_code": "FR_01",
+          "severity": 2,
+          "confidence": 0.9,
+          "notes": "Verified factual drift example."
+        },
+        {
+          "turn_id": "T002",
+          "event_code": "CA_01",
+          "severity": 1,
+          "confidence": 0.85,
+          "notes": "Mild context alignment note."
+        }
+      ]
+    }
+  ]
+}

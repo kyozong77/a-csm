@@ -1,0 +1,75 @@
+{
+  "turns": [
+    {
+      "id": "T1",
+      "role": "user",
+      "text": "Summarize the current release memo.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T2",
+      "role": "assistant",
+      "text": "The memo covers rollout timing and review owners.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T3",
+      "role": "user",
+      "text": "One section still has an ambiguous reference to the owner.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T4",
+      "role": "assistant",
+      "text": "I will clarify the owner field.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T5",
+      "role": "user",
+      "text": "Another follow-up keeps the same ambiguous reference in the note.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T6",
+      "role": "assistant",
+      "text": "I see the repeated ambiguity and will narrow it.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T7",
+      "role": "user",
+      "text": "The escalation log still shows ambiguous reference after the edits.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T8",
+      "role": "assistant",
+      "text": "That repeat pattern needs manual cleanup.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T9",
+      "role": "user",
+      "text": "Please record the issue for follow-up.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T10",
+      "role": "assistant",
+      "text": "Recorded for follow-up review.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    }
+  ]
+}
+

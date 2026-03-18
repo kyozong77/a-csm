@@ -1,0 +1,26 @@
+{
+  "turns": [
+    {
+      "id": "T1",
+      "role": "user",
+      "text": "Hello, what are your support hours?",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T2",
+      "role": "assistant",
+      "text": "Support is available from 9 AM to 6 PM on weekdays.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    },
+    {
+      "id": "T3",
+      "role": "user",
+      "text": "Thank you for the clear answer.",
+      "sourceTrust": "trusted",
+      "boundaryBypass": false
+    }
+  ]
+}
+
