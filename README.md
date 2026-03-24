@@ -25,7 +25,7 @@ It detects conversational contextual risk after interaction artifacts are availa
 
 ## Video Overview
 
-[![User-Side Hallucination — 7-min overview](assets/video-thumbnail.png)](https://rzvn.io/a-csm#video)
+[![User-Side Hallucination — 7-min overview](assets/video-thumbnail.png)](https://rzvn.io)
 
 > A 7-minute introduction to User-Side Hallucination and the A-CSM framework.
 > Covers the distinction between model-side and user-side hallucination, the USCH research spine, and the A-CSM detection pipeline.
@@ -66,7 +66,7 @@ The repository includes executable scripts, 8 core orchestration stages, release
 - Short form: `A-CSM`
 - Version: `0.1.0`
 - Repository: [github.com/kyozong77/A-CSM](https://github.com/kyozong77/A-CSM)
-- Project page: [rzvn.io/a-csm](https://rzvn.io/a-csm)
+- Project page: [rzvn.io](https://rzvn.io)
 
 ## Quick Start
 
