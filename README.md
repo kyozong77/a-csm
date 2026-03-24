@@ -23,8 +23,16 @@ It detects conversational contextual risk after interaction artifacts are availa
 ![Node](https://img.shields.io/badge/node-%3E%3D20-5FA04E)
 ![Release](https://img.shields.io/badge/release-public--core-success)
 
+## Video Overview
+
+[![User-Side Hallucination — 7-min overview](assets/video-thumbnail.png)](https://rzvn.io/a-csm#video)
+
+> A 7-minute introduction to User-Side Hallucination and the A-CSM framework.
+> Covers the distinction between model-side and user-side hallucination, the USCH research spine, and the A-CSM detection pipeline.
+
 ## Table of Contents
 
+- [Video Overview](#video-overview)
 - [Overview](#overview)
 - [Release Status](#release-status)
 - [Quick Start](#quick-start)
